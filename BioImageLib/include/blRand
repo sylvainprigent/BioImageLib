@@ -1,0 +1,2 @@
+  #include "../src/blRand/blRandomGeneratorPM.h"
+  #include "../src/blRand/blRandomGeneratorPMS.h"

@@ -1,0 +1,21 @@
+/**
+
+\page pageCastStacks blCastStacks: Cast, Resize, Project images
+  \tableofcontents
+
+
+  The blCastStacks toolbox implement the algorithm that cast an image from one type to another (ex: float to int), resize an image, and to stack (i.e. project) an image into a lower space (ex: max intensity z projection of a 3D image).
+
+  Documentation of provided algorithms is available from the tab Files -> blCastStacks, or using the list below:
+
+\li blCastImage 
+\li blCastImageToFloat 
+\li blCastImageToInt 
+\li blColorImageToGray 
+\li blColorImageToLuminance 
+\li blComposeColorImage  
+\li blExtractComponentColorImage 
+\li blZProjection 
+\li blResizeImage 
+ 
+*/

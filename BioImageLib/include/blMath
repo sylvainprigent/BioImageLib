@@ -1,0 +1,5 @@
+#include "../src/blMath/blDistance.h"
+#include "../src/blMath/blMath.h"
+#include "../src/blMath/blMathLinearAlgebra.h"
+#include "../src/blMath/blMathVector.h"
+#include "../src/blMath/blMathVectorClustering.h"

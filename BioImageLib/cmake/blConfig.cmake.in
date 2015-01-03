@@ -1,0 +1,26 @@
+############################################################
+#
+#
+# Copyright (c) BioImageLib 2014
+#
+# AUTHOR:
+# Sylvain Prigent
+# 
+######################################################################
+## 
+### Commentary: 
+## 
+######################################################################
+## 
+### Change log:
+## 
+######################################################################
+
+set(bl_INCLUDE_DIRS "@bl_INCLUDE_DIR@")
+set(bl_LIBRARY_DIRS "@bl_LIBRARY_DIR@")
+set(bl_CMAKE_DIR   "@bl_CMAKE_DIR@")
+
+set(bl_USE_FILE "@bl_USE_FILE@")
+
+set(ITK_DIR "@ITK_DIR@")
+set(LEMON_DIR "@LEMON_DIR@")

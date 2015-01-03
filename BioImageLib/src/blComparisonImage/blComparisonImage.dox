@@ -1,0 +1,13 @@
+/**
+
+\page pageComparisonImage blComparisonImage
+  \tableofcontents
+
+
+  The blComparisonImage toolbox provide methods to compare 2 images. This tools are usefull for testing and registration evaluation
+
+  Documentation of provided methods is available from the tab Files -> blComparisonImage, or using the list below:
+
+\li blComparisonImageFilter
+
+*/

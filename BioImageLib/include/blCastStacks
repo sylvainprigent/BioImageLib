@@ -1,0 +1,6 @@
+#include "../src/blCastStacks/blCastImage.h"
+#include "../src/blCastStacks/blCastImageToFloat.h"
+#include "../src/blCastStacks/blCastImageToInt.h"
+#include "../src/blCastStacks/blComposeColorImage.h"
+#include "../src/blCastStacks/blExtractComponentColorImage.h"
+#include "../src/blCastStacks/blProjectionImage.h"

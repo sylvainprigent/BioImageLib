@@ -1,0 +1,17 @@
+/**
+
+\page pageGeometry blGeometry: geomety utilities
+  \tableofcontents
+
+
+  The blGeometry toolbox provide methods to calculate attributs of 2D and 3D shapes.
+
+  Documentation of provided methods is available from the tab Files -> blGeometry, or using the list below:
+
+\li blMathGeometry
+\li blPoint2D
+\li blPolygon
+\li blOverlapTests: test overlaping of 2 polygons
+\li blMathImage: Calculate pixels intensities values inside shapes
+
+*/

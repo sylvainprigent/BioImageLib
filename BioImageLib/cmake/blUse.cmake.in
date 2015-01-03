@@ -1,0 +1,31 @@
+############################################################
+#
+#
+# Copyright (c) bioImageLib 2014
+#
+# AUTHOR:
+# Sylvain Prigent 
+# 
+######################################################################
+## 
+### Commentary: 
+## 
+######################################################################
+## 
+### Change log:
+## 
+######################################################################
+
+if(NOT BL_USE_FILE_INCLUDED)
+
+   set(BL_USE_FILE_INCLUDED 1)
+
+   include_directories(${bl_INCLUDE_DIRS})
+
+   link_directories(${bl_LIBRARY_DIRS})
+
+   set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${bl_CMAKE_DIR})
+
+   include(blDependencies)
+   
+endif(NOT BL_USE_FILE_INCLUDED)

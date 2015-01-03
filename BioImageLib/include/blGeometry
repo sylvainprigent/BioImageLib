@@ -1,0 +1,2 @@
+#include "../src/blGeometry/blMathGeometry.h"
+#include "../src/blGeometry/blMathImage.h"

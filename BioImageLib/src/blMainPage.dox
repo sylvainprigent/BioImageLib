@@ -1,0 +1,20 @@
+/**
+\mainpage BioImageLib
+
+\tableofcontents
+
+BioImageLib is a c++ image processing toolbox dedicated to biological image processing.
+This library depend on the itk (Insight Tool Kit) library that contains the state of the art of biomedical image processing algorithm. BioImageLib is divided into sub part each one containing a specific
+architecture designed for a specific algorithm (see the tab "Files") to overview all the sub directories of BioImageLib. The main directory "blCore" contains the basic data structures (blImage, blMatrix...) and design patern to help implementing image proccessing algorithms (blProcess). All the others folder of the library (see the tab "Files") implement a specific type of processing.
+
+Please find below the links to the documentation of each BioImageLib tool. 
+
+\li \ref pageCastStacks
+\li \ref pageComparisonImage
+\li \ref pageFiltering
+\li \ref pageGeometry
+\li \ref pageMath
+\li \ref pageMpp
+\li \ref pageRand
+
+*/

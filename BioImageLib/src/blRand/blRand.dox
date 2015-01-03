@@ -1,0 +1,12 @@
+/**
+
+\page pageRand blRand: Random generators
+  \tableofcontents
+
+
+  The blRand toolbox provides implementation of random generators:
+   
+\li blRandomGeneratorPM 
+\li blRandomGeneratorPMS
+
+*/

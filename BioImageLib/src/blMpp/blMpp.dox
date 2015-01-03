@@ -1,0 +1,79 @@
+/**
+
+\page pageMpp blMpp: Marked Point Process
+  \tableofcontents
+
+
+  The blMpp toolbox implement the Marked Point Process methodology to detect shapes on images.
+  In this implementation, the different components of the algorithm have been separated into individual classes (see figure below).  
+  
+ \image html "../images/blMppDesign.png" 
+
+To have an example of how to use this framework, see the tests at BioLib/tests/blMpp.
+
+To use this framework as a command line, a factory is implemented in BioLib/tools/blMpp.
+
+
+\section blMppSG Shape Generator
+
+A shape generator is defined by the pure virtual class blMppGeneratorShape.
+
+The role of the shape generator class is to generate a new shape any time the algorithm ask for a new shape. 
+
+To define a new shape generator, you need to implement the virtual methods described in blMppGeneratorShape.
+A shape generator can take as an input either an blImageSize to define the birth area of a binary image where
+object are generated only in the white area.
+
+To have the list of all the available shape generators, please refer to the inheritance diagram of blMppGeneratorShape
+
+\section blMppDT Data Term
+
+A data term is defined by the pure virtual class blMppDataTerm.
+
+The role of the data term class is to compute a value in the range [-1, 1] to determine if a shape is well shaped and well positioned in the image. The closest the data term to -1 the better the shape is. Shapes with positive data term are considered as
+bad by an optimizer. Nevertheless, such a shape can be kept given it's interactions. 
+
+To define a new data term, you need to implement the virtual methods described in blMppDataTerm.
+
+To have the list of all the available data terms, please refer to the inheritance diagram of blMppDataTerm
+
+\section blMppSI Shapes Interactions
+
+A shape interaction is defined by the pure virtual class blMppInteraction.
+
+The role of the interaction class is to compute a value in the range [-1, 1] to determine if two shapes
+are in interaction. If the interaction value is negative, the interaction is a repulsion. If the interaction value is
+positive, the interaction is an attraction.
+
+To define a new interaction, you need to implement the virtual methods described in blMppInteraction.
+
+To have the list of all the available interactions, please refer to the inheritance diagram of blMppInteraction
+
+\section blMppA Algorithm
+
+An algorithm is defined by the pure virtual class blMppAlgorithm.
+
+The role of the algorithm class is to find the best objects on an image using a model defined by both a shape generator, a 
+data term and an interaction. Typically, the algorithm ask the generator to randomly generate some shapes, will calculate the data
+term of a configuration of shapes, and then select the best ones taking into account the interactions between shapes. 
+
+To define a new algorithm, you need to implement the virtual methods described in blMppAlgorithm.
+
+To have the list of all the available algorithms, please refer to the inheritance diagram of blMppAlgorithm
+
+\section blMppSO Save Outputs
+
+the class blMppResultRepresentation is provided as a convenient tool to plot the detected shapes into an image, and to save
+the detected shapes list into a txt file
+
+\section RunBlMpp Run blMpp
+
+To run a shape detection using blMpp, you can write a main function that implement the pipline in the figure above using the 
+generator, data term, interaction and algorithm you choose.
+
+For convenience, a main function implementing such a pipline is provided in BioLib/Tools/blMpp/main.cpp.
+This main function use the factory blMppFactory to instanciate the generator, data term, interaction and algorithm classes
+from a parameter file. Please refer to the implementation of blMppFactory to get the parameters names to setup in the 
+parameter file depending on the generator, data term, interaction and algorithm you choose.
+
+*/

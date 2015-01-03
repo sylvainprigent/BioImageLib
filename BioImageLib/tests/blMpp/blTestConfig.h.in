@@ -1,0 +1,19 @@
+/* blConfig.h.in ---
+ * 
+ * Author: Julien Wintz
+ * Created: Fri Sep 13 17:13:53 2013 (+0200)
+ * Version: 
+ * Last-Updated: Fri Sep 13 17:14:14 2013 (+0200)
+ *           By: Julien Wintz
+ *     Update #: 1
+ */
+
+/* Change Log:
+ * 
+ */
+
+#define BLMPPTESTIMAGE "@BLMPPTESTIMAGE@"
+#define BLMPPCELLTESTIMAGE "@BLMPPCELLTESTIMAGE@"
+#define BLMPPCELLBMTESTIMAGE "@BLMPPCELLBMTESTIMAGE@"
+#define BLMPPEMBRYONTESTIMAGE "@BLMPPEMBRYONTESTIMAGE@"
+#define BLMPPEMBRYONBMTESTIMAGE "@BLMPPEMBRYONBMTESTIMAGE@"

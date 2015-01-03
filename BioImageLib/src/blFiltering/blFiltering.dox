@@ -1,0 +1,25 @@
+/**
+
+\page pageFiltering blFiltering: denoise, smooth,  enhance content on images
+  \tableofcontents
+
+
+  The blFiltering toolbox implement the state of the art filtering algorithms to denoise, smooth and enhance content on images.
+
+  Documentation of filters is available from the tab Files -> blFiltering, or using the list below:
+
+\li blBilateralFilter
+\li blBinomialBlurFilter
+\li blConvolutionFilter
+\li blCurvatureFlowFilter
+\li blDiscreteGaussianFilter
+\li blFrangiFilter
+\li blKernelConvolution
+\li blMeanFilter
+\li blMedianFilter
+\li blMinMaxCurvatureFlowFilter
+\li blRecursiveGaussianFilter
+\li blVectorCurvatureAnisotropicDiffusionFilter
+\li blVectorGradientAnisotropicDiffusionFilter
+
+*/

@@ -1,0 +1,17 @@
+/**
+
+\page pageMath blMath
+  \tableofcontents
+
+
+  The blMath toolbox provides classes that implement usefull mathematics like distances, linear algebra...
+
+  Documentation of provided classes is available from the tab Files -> blMath, or using the list below:
+
+\li blDistance 
+\li blMath 
+\li blMathLinearAlgebra 
+\li blMathVector 
+\li blVectorKMeans 
+
+*/
