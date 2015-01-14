@@ -2,7 +2,7 @@
 BioImageLib
 ===========
 
-image processing library for biology
+Image processing library for biology
 
 
 ===========
