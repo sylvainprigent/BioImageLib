@@ -8,7 +8,7 @@ Image processing library for biology
 ===========
   Install
 ===========
-To install BioIMageLib, you need 
+To install BioImageLib, you need 
 first to compile the documentation:
 
 - To generate the documentation, doxygen is mandatory. 
