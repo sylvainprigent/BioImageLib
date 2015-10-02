@@ -12,6 +12,7 @@
 ## Options
 ## #################################################################
 option(bl_BUILD_MPP "Build mpp" false)
+option(bl_BUILD_AT "Build association tracking" false)
 
 ## #################################################################
 ## Add subdirectory
@@ -28,10 +29,22 @@ add_subdirectory( blCastStacks )
 add_subdirectory( blFiltering )
 add_subdirectory( blGeometry )
 add_subdirectory( blTxtIO )
+add_subdirectory( blStatistics )
+add_subdirectory( blTrackingStats )
 
-# aptional toolboxes
+# optional toolboxes
+message(STATUS "check use mpp")
 if(bl_BUILD_MPP)
 if(bl_HAVE_LEMON)
   add_subdirectory( blMpp )
+  message(STATUS "use mpp")
 endif(bl_HAVE_LEMON)
-endif()
+endif(bl_BUILD_MPP)
+
+message(STATUS "check use association tracking")
+if(bl_BUILD_AT)
+if(bl_HAVE_LEMON)
+  add_subdirectory( blAssociationTracking )
+  message(STATUS "use association tracking")
+endif(bl_HAVE_LEMON)
+endif(bl_BUILD_AT)

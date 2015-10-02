@@ -7,11 +7,12 @@
 #pragma once
 #include "blMppGeneratorShapeEllipse.h"
 #include "blMppShapeEllipse.h"
+#include "blMppExport.h"
 
 /// \class blMppGeneratorShapeEllipseIn3D
 /// \brief Generator of 2D ellipse defined by blMppShapeEllipse in any
 /// (x,y) layer of a 3D image
-class blMppGeneratorShapeEllipseIn3D : public blMppGeneratorShapeEllipse {
+class BLMPP_EXPORT blMppGeneratorShapeEllipseIn3D : public blMppGeneratorShapeEllipse {
 
 public:
     /// \fn blMppGeneratorShapeEllipseIn3D();

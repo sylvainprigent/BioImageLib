@@ -8,11 +8,12 @@
 
 #include <blCore>
 #include "itkConvolutionImageFilter.h"
+#include "blFilteringExport.h"
 
 /// \class blFilter
 /// \brief Class that define an interface for
 /// an image filter
-class blFilter : public blProcess{
+class BLFILTERING_EXPORT blFilter : public blProcess{
 
 public:
     /// \fn blFilter();

@@ -1,3 +1,4 @@
+/*
 /// \file blFrangiFilter.h
 /// \brief blFrangiFilter class
 /// \author Sylvain Prigent
@@ -9,10 +10,11 @@
 #include "blFilter.h"
 #include "itkHessianToObjectnessMeasureImageFilter.h"
 #include "itkMultiScaleHessianBasedMeasureImageFilter.h"
+#include "blFilteringExport.h"
 
 /// \class blFrangiFilter
 /// \brief Enhance the tubular structures in an image using the grangi filter
-class blFrangiFilter : public blFilter{
+class BLFILTERING_EXPORT blFrangiFilter : public blFilter{
 
 public:
     /// \fn blFrangiFilter();
@@ -103,3 +105,4 @@ private:
         return new blImage(multiScaleEnhancementFilter->GetOutput());
     }
 };
+*/

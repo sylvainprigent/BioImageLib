@@ -24,10 +24,10 @@ set(${PROJECT_NAME}_MAIN_SOURCES
   blConvolutionFilter.cpp
   blCurvatureFlowFilter.cpp
   blDiscreteGaussianFilter.cpp
-  blFrangiFilter.cpp
+#  blFrangiFilter.cpp
   blKernelConvolution.cpp
   blMeanFilter.cpp
-  blMedianFilter.cpp
+  blMedianFilterTest.cpp
   blMinMaxCurvatureFlowFilter.cpp
   blRecursiveGaussianFilter.cpp
   blVectorCurvatureAnisotropicDiffusionFilter.cpp

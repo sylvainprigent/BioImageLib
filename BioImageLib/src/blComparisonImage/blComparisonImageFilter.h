@@ -8,10 +8,11 @@
 
 #include <blCore>
 #include "itkTestingComparisonImageFilter.h"
+#include "blComparisonImageExport.h"
 
 /// \class blComparisonImageFilter
 /// \brief Compare if two images are equals
-class blComparisonImageFilter : public blProcess{
+class BLCOMPARISONIMAGE_EXPORT blComparisonImageFilter : public blProcess{
 
 public:
     /// \fn blComparisonImageFilter();

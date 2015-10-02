@@ -1,0 +1,4 @@
+#include "../src/blTrackingStats/blSPoint.h"
+#include "../src/blTrackingStats/blSTrack.h"
+#include "../src/blTrackingStats/blSTracks.h"
+#include "../src/blTrackingStats/blSTracksImport.h"

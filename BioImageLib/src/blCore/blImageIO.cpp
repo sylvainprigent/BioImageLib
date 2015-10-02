@@ -55,9 +55,8 @@ void blImageIO::saveInt2DImage(const string filePath, const Int2DImage::Pointer 
         {
             // cast
             typedef itk::CastImageFilter<Int2DImage,UChar2DImage > CasterType;
-            typedef typename CasterType::Pointer CasterPointerType;
 
-            CasterPointerType caster = CasterType::New();
+			CasterType::Pointer caster = CasterType::New();
             caster->SetInput( image );
             caster->Update();
             UChar2DImage::Pointer castedImage = caster->GetOutput();
@@ -113,9 +112,8 @@ void blImageIO::saveInt3DImage(const string filePath, const Int3DImage::Pointer 
         {
             // cast
             typedef itk::CastImageFilter<Int3DImage,UChar3DImage > CasterType;
-            typedef typename CasterType::Pointer CasterPointerType;
-
-            CasterPointerType caster = CasterType::New();
+      
+			CasterType::Pointer caster = CasterType::New();
             caster->SetInput( image );
             caster->Update();
             UChar3DImage::Pointer castedImage = caster->GetOutput();
@@ -171,9 +169,8 @@ void blImageIO::saveFloat2DImage(const string filePath, const Float2DImage::Poin
         {
             // cast
             typedef itk::CastImageFilter<Float2DImage,UChar2DImage > CasterType;
-            typedef typename CasterType::Pointer CasterPointerType;
 
-            CasterPointerType caster = CasterType::New();
+			CasterType::Pointer caster = CasterType::New();
             caster->SetInput( image );
             caster->Update();
             UChar2DImage::Pointer castedImage = caster->GetOutput();
@@ -229,9 +226,8 @@ void blImageIO::saveFloatColor2DImage(const string filePath, const FloatColor2DI
         {
             // cast
             typedef itk::CastImageFilter<FloatColor2DImage,UCharColor2DImage > CasterType;
-            typedef typename CasterType::Pointer CasterPointerType;
-
-            CasterPointerType caster = CasterType::New();
+          
+			CasterType::Pointer caster = CasterType::New();
             caster->SetInput( image );
             caster->Update();
             UCharColor2DImage::Pointer castedImage = caster->GetOutput();
@@ -287,9 +283,8 @@ void blImageIO::saveIntColor2DImage(const string filePath, const IntColor2DImage
         {
             // cast
             typedef itk::CastImageFilter<IntColor2DImage,UCharColor2DImage > CasterType;
-            typedef typename CasterType::Pointer CasterPointerType;
 
-            CasterPointerType caster = CasterType::New();
+			CasterType::Pointer caster = CasterType::New();
             caster->SetInput( image );
             caster->Update();
             UCharColor2DImage::Pointer castedImage = caster->GetOutput();
@@ -373,9 +368,8 @@ void blImageIO::saveFloat3DImage(const string filePath, const Float3DImage::Poin
         {
             // cast
             typedef itk::CastImageFilter<Float3DImage,UChar3DImage > CasterType;
-            typedef typename CasterType::Pointer CasterPointerType;
-
-            CasterPointerType caster = CasterType::New();
+           
+			CasterType::Pointer caster = CasterType::New();
             caster->SetInput( image );
             caster->Update();
             UChar3DImage::Pointer castedImage = caster->GetOutput();
@@ -430,9 +424,8 @@ void blImageIO::saveIntColor3DImage(const string filePath, const IntColor3DImage
         {
             // cast
             typedef itk::CastImageFilter<IntColor3DImage,UCharColor3DImage > CasterType;
-            typedef typename CasterType::Pointer CasterPointerType;
-
-            CasterPointerType caster = CasterType::New();
+            
+			CasterType::Pointer caster = CasterType::New();
             caster->SetInput( image );
             caster->Update();
             UCharColor3DImage::Pointer castedImage = caster->GetOutput();
@@ -487,9 +480,8 @@ void blImageIO::saveFloatColor3DImage(const string filePath, const FloatColor3DI
         {
             // cast
             typedef itk::CastImageFilter<FloatColor3DImage,UCharColor3DImage > CasterType;
-            typedef typename CasterType::Pointer CasterPointerType;
-
-            CasterPointerType caster = CasterType::New();
+           
+			CasterType::Pointer caster = CasterType::New();
             caster->SetInput( image );
             caster->Update();
             UCharColor3DImage::Pointer castedImage = caster->GetOutput();

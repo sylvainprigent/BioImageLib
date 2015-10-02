@@ -10,10 +10,11 @@
 #include "blMppShape.h"
 #include "blMppInteraction.h"
 #include "blMppShapeGraph.h"
+#include "blMppExport.h"
 
 /// \class blMppContainerConfig2D
 /// \brief Virtual class to store the 2D shapes in a 2D grid to accelerate the interaction calculation
-class blMppContainerConfig2D{
+class BLMPP_EXPORT blMppContainerConfig2D{
 
 public:
     /// \fn blMppContainerConfig2D();

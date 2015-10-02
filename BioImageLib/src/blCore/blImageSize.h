@@ -5,10 +5,11 @@
 /// \date 2014
 
 #pragma once
+#include "blCoreExport.h"
 
 /// \class blImageSize
 /// \brief Contains the size of a blImage
-class blImageSize{
+class BLCORE_EXPORT blImageSize{
 
 public:
     /// \fn blImageSize();

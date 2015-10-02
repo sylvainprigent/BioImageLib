@@ -11,10 +11,11 @@
 #include <blCore>
 #include "blMppContainerSilhouette.h"
 #include "blMppShape.h"
+#include "blMppExport.h"
 
 /// \class blMppShape2D
 /// \brief Class defining an Shape for a Marked Point Process
-class blMppShape2D : public blMppShape{
+class BLMPP_EXPORT blMppShape2D : public blMppShape{
 
 public:
     /// \fn blMppShape2D();

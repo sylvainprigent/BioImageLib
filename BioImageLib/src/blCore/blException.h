@@ -9,11 +9,12 @@
 #include <iostream>
 #include <sstream>
 #include <exception>
+#include "blCoreExport.h"
 
 /// \class blException
 /// \brief class defining the exeptions used in the code
 /// heritate from the std::exception
-class blException : public std::exception
+class BLCORE_EXPORT blException : public std::exception
 {
 public:
     /// \fn blException( const char * Msg )

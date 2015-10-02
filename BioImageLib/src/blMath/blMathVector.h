@@ -8,10 +8,11 @@
 
 #include <vector>
 #include <string>
+#include "blMathExport.h"
 
 /// \class  DistancesTypes
 /// \brief class  defining static std::strings to nominate distances as input parameter
-class DistancesTypes{
+class BLMATH_EXPORT DistancesTypes{
 public:
     static const std::string BHATTACHARYYA; ///< static string to refer to Bhattacharyya distance
     static const std::string MEAN_DIFF; ///< static string to refer to mean diff "distance"
@@ -19,7 +20,7 @@ public:
 
 /// \class blMathVector
 /// \brief Implement usefull common operations on vectors
-class blMathVector {
+class BLMATH_EXPORT blMathVector {
 
  public:
   /// \fn template <typename T> static T norm(const std::vector<T>& vect, const bool& useSqrt = true);

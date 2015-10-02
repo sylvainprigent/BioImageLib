@@ -8,11 +8,12 @@
 
 #include <blCore>
 #include "blMppShape.h"
+#include "blMppExport.h"
 
 /// \class blMppInteraction
 /// \brief Class that define the prototype of a Marked Point Process
 /// interaction between a pair of shape
-class blMppInteraction : public blProcess{
+class BLMPP_EXPORT blMppInteraction : public blProcess{
 
 public:
     /// \fn blMppInteraction();

@@ -10,11 +10,12 @@
 #include <string>
 
 #include "blMppShape2D.h"
+#include "blMppExport.h"
 
 /// \class blMppShapeRectangle
 /// \brief define a blMppShape rectangle 2D by the equation
 ///  |X-Xc|^10 / |a|^10 + |Y-Yc|^10 / |b|^10 = 1
-class blMppShapeRectangle : public blMppShape2D{
+class BLMPP_EXPORT blMppShapeRectangle : public blMppShape2D{
 
 public:
     /// \fn blMppShapeRectangle();

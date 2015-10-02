@@ -8,11 +8,12 @@
 
 #include <string>
 #include <set>
+#include "blCoreExport.h"
 
 /// \class blProcessObserver
 /// \brief class blProcessObserver implementing the observer for the patern Observer/Observable
 /// for a blprocess
-class blProcessObserver{
+class BLCORE_EXPORT blProcessObserver{
 public:
     /// \fn virtual void updateInfo(std::string data, int level = 1) = 0;
     /// \brief To send an information of level 1
@@ -32,7 +33,7 @@ public:
 /// \class blProcessObservable
 /// \brief class implementing the Observable for the patern Observer/Observable
 ///  for a blprocess
-class blProcessObservable{
+class BLCORE_EXPORT blProcessObservable{
 protected:
     std::set<blProcessObserver*> list_observers; ///< list of the pointers to observers
 
@@ -66,7 +67,7 @@ public:
 
 /// \class blProcessObserverCommandeLine
 /// \brief Observer that write the observed signals in the console
-class blProcessObserverCommandeLine : public blProcessObserver{
+class BLCORE_EXPORT blProcessObserverCommandeLine : public blProcessObserver{
 public:
     /// \fn virtual void updateInfo(std::string data, int level = 1);
     /// \brief To send an information of level 1
@@ -85,7 +86,7 @@ public:
 
 /// \class blProcessObserverNull
 /// \brief Observer that only write warnings in the consol
-class blProcessObserverNull : public blProcessObserver{
+class BLCORE_EXPORT blProcessObserverNull : public blProcessObserver{
 public:
     /// \fn virtual void updateInfo(std::string data, int level = 1);
     /// \brief To send an information of level 1

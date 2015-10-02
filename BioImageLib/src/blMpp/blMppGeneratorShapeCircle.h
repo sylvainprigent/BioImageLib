@@ -9,10 +9,11 @@
 #include "blMppGeneratorShapeCircle.h"
 #include "blMppShapeCircle.h"
 #include "blMppGeneratorShape.h"
+#include "blMppExport.h"
 
 /// \class blMppGeneratorShapeCircle
 /// \brief Generator of 2D superquadric defined by blMppShapeSuperquadric2D
-class blMppGeneratorShapeCircle : public blMppGeneratorShape {
+class BLMPP_EXPORT blMppGeneratorShapeCircle : public blMppGeneratorShape {
 
 public:
     /// \fn blMppGeneratorShapeCircle();

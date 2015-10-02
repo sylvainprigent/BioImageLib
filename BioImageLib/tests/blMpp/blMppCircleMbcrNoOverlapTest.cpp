@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
     // test 1 without birth map
     //std::cout << "test 1" << std::endl;
     std::vector<blMppShape*> shapes = runMpp(BLMPPCELLTESTIMAGE, "");
-    //std::cout << "size no bm" << shapes.size() << std::endl;
+    std::cout << "size no bm =" << shapes.size() << std::endl;
     if (shapes.size() != 31){
         returnVal = 1;
     }
@@ -32,6 +32,7 @@ int main(int argc, char* argv[])
     // test 1 without birth map
     //std::cout << "test 2" << std::endl;
     std::vector<blMppShape*> shapes2 = runMpp(BLMPPCELLTESTIMAGE, BLMPPCELLBMTESTIMAGE);
+    std::cout << "size no bm =" << shapes2.size() << std::endl;
     if (shapes2.size() != 33){
         returnVal = 1;
     }

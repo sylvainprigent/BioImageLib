@@ -7,10 +7,11 @@
 #pragma once
 
 #include <vector>
+#include "blCoreExport.h"
 
 /// \class blColor
 /// \brief class allowing to get a random color
-class blColor{
+class BLCORE_EXPORT blColor{
 
 public:
     /// \fn static std::vector<int> GetRandRGB();

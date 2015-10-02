@@ -9,11 +9,12 @@
 #include "blMppDataTerm.h"
 #include "itkGradientRecursiveGaussianImageFilter.h"
 #include "itkImage.h"
+#include "blMppExport.h"
 
 /// \class blMppDataTermGradient
 /// \brief Class that define an Marked Point Process data term
 /// as the average gradient of the pixels in the border of a shape
-class blMppDataTermGradient : public blMppDataTerm{
+class BLMPP_EXPORT blMppDataTermGradient : public blMppDataTerm{
 
 public:
     /// \fn blMppDataTermGradient();

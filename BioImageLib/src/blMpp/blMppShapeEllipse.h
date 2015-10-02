@@ -9,11 +9,12 @@
 #include <vector>
 #include <string>
 #include "blMppShape2D.h"
+#include "blMppExport.h"
 
 /// \class blMppShapeEllipse
 /// \brief define a blMppShape ellipse by the equation
 ///  (X-Xc)^2 / a^2 + (Y-Yc)^2 / b^2 = 1
-class blMppShapeEllipse : public blMppShape2D{
+class BLMPP_EXPORT blMppShapeEllipse : public blMppShape2D{
 
 public:
     /// \fn blMppShapeEllipse();

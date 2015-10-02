@@ -8,6 +8,7 @@
 
 #include "blMppDataTerm.h"
 #include "blMppShapeEllipse.h"
+#include "blMppExport.h"
 
 /// \class blMppDataTermPartBhatt
 /// \brief Class that define an Marked Point Process data term
@@ -17,7 +18,7 @@
 /// at least 3 of these regions must have a Bhattacharyya distance
 /// greater than the threshold for the data term to be negative
 /// This data term has been made for the axon data set of Caroline
-class blMppDataTermPartBhatt : public blMppDataTerm{
+class BLMPP_EXPORT blMppDataTermPartBhatt : public blMppDataTerm{
 
 public:
     /// \fn blMppDataTermPartBhatt();

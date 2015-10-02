@@ -10,9 +10,11 @@
 #include <vector>
 #include <string>
 
+#include "blTxtIOExport.h"
+
 /// \class blTxtIO
 /// \brief class BLCORE_EXPORT containing static function to load/write various type of data into txt files
-class blTxtIO{
+class BLTXTIO_EXPORT blTxtIO{
 public:
     /// \fn static void SaveShapesIntoTxtFile(std::vector< std::vector<float> > Shapes, std::string filePath);
     /// \brief Function that save mpp Shapes into a txt file

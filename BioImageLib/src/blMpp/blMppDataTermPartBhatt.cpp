@@ -104,6 +104,7 @@ float blMppDataTermPartBhatt::compute(blMppShape* shape){
     else if (m_implementationId == 1){
         return computeEllipseIn3D(shape);
     }
+    return 0;
 }
 
 float blMppDataTermPartBhatt::computeEllipse(blMppShape* shape){
@@ -134,6 +135,15 @@ float blMppDataTermPartBhatt::computeEllipse(blMppShape* shape){
     if (mD_side2 < 0){dB_side2=0;}
 
     // 4- Makes the decision
+    float dB = dB_side1;
+    if (dB_side2<dB)
+        dB = dB_side2;
+    if (dB_head1<dB)
+        dB = dB_head1;
+    if (dB_head2<dB)
+        dB = dB_head2;
+
+    /*
     float dB_head = max(dB_head1, dB_head2);
     // take the min
     float dB = dB_side1;
@@ -141,6 +151,7 @@ float blMppDataTermPartBhatt::computeEllipse(blMppShape* shape){
         dB = dB_side2;
     if (dB_head<dB)
         dB=dB_head;
+     */
 
 
     // 5- Threshold the energy

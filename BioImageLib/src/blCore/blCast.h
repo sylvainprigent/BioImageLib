@@ -7,10 +7,12 @@
 #pragma once
 
 #include <sstream>
+#include "blCoreExport.h"
+using namespace std;
 
 /// \class blCast
 /// \brief cast strings and numbers
-class blCast{
+class BLCORE_EXPORT blCast{
 
 public:
     /// \fn template<typename T> std::string to_string( const T & Value )
@@ -28,10 +30,11 @@ public:
     template<typename T>
     static bool from_string( const std::string & Str, T & Dest )
     {
-        // créer un flux à partir de la chaîne donnée
-        std::istringstream iss( Str );
-        // tenter la conversion vers Dest
+        //// créer un flux à partir de la chaîne donnée
+        istringstream iss( Str );
+        //// tenter la conversion vers Dest
         return iss >> Dest != 0;
+        //return false;
     }
 };
 

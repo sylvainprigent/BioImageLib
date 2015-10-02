@@ -7,10 +7,11 @@
 #pragma once
 
 #include "blImageTypes.h"
+#include "blCoreExport.h"
 
 /// \class blImageCreate
 /// \brief class that define static function to create images of various types
-class blImageCreate{
+class BLCORE_EXPORT blImageCreate{
 public:
     /// \fn static Int2DImage::Pointer createNewInt2DImage(int nl, int nc);
     /// \brief Function that create a 2D Int image

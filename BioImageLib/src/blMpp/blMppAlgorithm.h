@@ -10,13 +10,14 @@
 #include "blMppDataTerm.h"
 #include "blMppInteraction.h"
 #include <blCore/blTableNumber.h>
+#include "blMppExport.h"
 
 /// \class blMppAlgorithm
 /// \brief Class defing the basic functions needed to implement a Marked Point Process Algorithm.
 /// This class need a Shape generator derivated from blMppGeneratorShape to generate
 /// shapes, blMppdataTerm to compute the dataTerm term, and blMppInteraction to evaluate
 /// interactions between pairs of objects
-class blMppAlgorithm : public blProcess{
+class BLMPP_EXPORT blMppAlgorithm : public blProcess{
 
 public:
     /// \fn blMppAlgorithm();

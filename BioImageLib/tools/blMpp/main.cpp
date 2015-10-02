@@ -13,7 +13,7 @@
 #include "blRand/blRandomGeneratorPM.h"
 using namespace std;
 
-main(int argc, char *argv[]){
+int main(int argc, char *argv[]){
 
     // --------------------- Get inputs --------------------------//
     if (argc < 5){
@@ -23,6 +23,7 @@ main(int argc, char *argv[]){
         cout << "\t 3- Output Image" << endl;
         cout << "\t 4- Output Txt File" << endl;
         cout << "\t 5- Birth mask (optional)" << endl;
+        cout << "\t 6- Representation Image (optional)" << endl;
         return 1;
     }
     string inputImage = argv[1];
@@ -43,6 +44,7 @@ main(int argc, char *argv[]){
         // load parameters
         blProcessParameters* parameters = new blProcessParameters(parameterFile);
         parameters->load();
+        parameters->printParamConsole();
 
         // load image
         blImage* image = new blImage(inputImage);
@@ -63,7 +65,7 @@ main(int argc, char *argv[]){
         blMppAlgorithm* algorithm = factory.algorithm(generator, dataTerm, interaction, parameters->getValueOfKey<string>("blMppAlgorithm", ""));
 
         // Init
-        if ( argc == 6){
+        if ( argc >= 6){
             generator->setBirthMap(new blImage(argv[5]));
         }
         else{
@@ -90,11 +92,21 @@ main(int argc, char *argv[]){
         if (useRandColor > 0){
             useRandColorb = true;
         }
-        blImage* output = blMppResultRepresentation::imageRepresentation(shapes, "border", image, useRandColorb);
-        output->save(outputImage, true);
+
+        blImage* output = NULL;
+        if ( argc == 7){
+            std::cout << "Save the representation image: main" << std::endl;
+            blImage* imageRepresentation = new blImage(argv[6]);
+            output = blMppResultRepresentation::imageRepresentation(shapes, "border", imageRepresentation, useRandColorb);
+            output->save(outputImage, true);
+        }
+        else{
+            output = blMppResultRepresentation::imageRepresentation(shapes, "border", image, useRandColorb);
+            output->save(outputImage, true);
+        }
 
         blMppResultRepresentation::saveShapeListToFile(shapes, outputTxtFile);
-        blMppResultRepresentation::saveShapeListToFileInsidePixels(shapes);
+        //blMppResultRepresentation::saveShapeListToFileInsidePixels(shapes);
         cout << "save output finished" << endl;
         // free memory
         delete algorithm;

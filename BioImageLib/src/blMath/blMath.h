@@ -9,10 +9,11 @@
 #define _USE_MATH_DEFINES
 #include <cmath>
 #include <math.h>
+#include "blMathExport.h"
 
 /// \class blMath
 /// \brief Implement basic mathematical static methods
-class blMath
+class BLMATH_EXPORT blMath
 {
 public:
     /// \fn static bool isNan(const float& number);

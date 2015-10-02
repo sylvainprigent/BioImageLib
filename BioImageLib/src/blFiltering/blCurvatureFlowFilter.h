@@ -8,10 +8,11 @@
 
 #include "blFilter.h"
 #include "itkCurvatureFlowImageFilter.h"
+#include "blFilteringExport.h"
 
 /// \class blCurvatureFlowFilter
 /// \brief Denoise an image using curvature driven flow.
-class blCurvatureFlowFilter : public blFilter{
+class BLFILTERING_EXPORT blCurvatureFlowFilter : public blFilter{
 
 public:
     /// \fn blCurvatureFlowFilter();

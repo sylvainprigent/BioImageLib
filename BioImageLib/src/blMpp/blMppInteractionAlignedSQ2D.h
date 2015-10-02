@@ -7,11 +7,12 @@
 #pragma once
 
 #include "blMppInteraction.h"
+#include "blMppExport.h"
 
 /// \class blMppInteractionAlignedSQ2D
 /// \brief Class that define the interaction between a pair of
 /// superquadric 2D as no overlapping and aligned along the minor axis
-class blMppInteractionAlignedSQ2D : public blMppInteraction{
+class BLMPP_EXPORT blMppInteractionAlignedSQ2D : public blMppInteraction{
 
 public:
     /// \fn blMppInteractionAlignedSQ2D();

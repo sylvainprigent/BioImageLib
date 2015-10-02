@@ -7,11 +7,12 @@
 #pragma once
 
 #include <vector>
+#include "blMathExport.h"
 
 /// \class blDistance
 /// \brief Definine static functions that implement
 /// mathematical distances between points of distributions
-class blDistance{
+class BLMATH_EXPORT blDistance{
 
 public:
     /// \fn static float euclidian_square(float ax, float ay, float bx, float by);
@@ -41,7 +42,7 @@ public:
 
 /// \class blFrechetDistance
 /// \brief Calculate the Frechet distance between two curves
-class blFrechetDistance{
+class BLMATH_EXPORT blFrechetDistance{
 
 public:
    /// \fn blFrechetDistance(std::vector<std::vector<float> > curve_1, std::vector<std::vector<float> > curve_2, int dimension);

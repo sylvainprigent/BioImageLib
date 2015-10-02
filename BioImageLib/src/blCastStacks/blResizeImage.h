@@ -10,11 +10,12 @@
 #include "itkRGBToLuminanceImageFilter.h"
 #include "itkIdentityTransform.h"
 #include "itkResampleImageFilter.h"
+#include "blCastStacksExport.h"
 
 /// \class blResizeImage
 /// \brief Extract a gray scale component (red, green or blue)
 /// from a color image
-class blResizeImage : public blProcess{
+class BLCASTSTACKS_EXPORT blResizeImage : public blProcess{
 public:
     /// \fn blResizeImage();
     /// \brief Constructor

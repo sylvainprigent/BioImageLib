@@ -8,11 +8,12 @@
 
 #include "blFilter.h"
 #include "itkVectorCurvatureAnisotropicDiffusionImageFilter.h"
+#include "blFilteringExport.h"
 
 /// \class blVectorCurvatureAnisotropicDiffusionFilter
 /// \brief This filter performs anisotropic diffusion on a vector
 /// Image using the modified curvature diffusion equation (MCDE)
-class blVectorCurvatureAnisotropicDiffusionFilter : public blFilter{
+class BLFILTERING_EXPORT blVectorCurvatureAnisotropicDiffusionFilter : public blFilter{
 
 public:
     /// \fn blVectorCurvatureAnisotropicDiffusionFilter();

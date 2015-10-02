@@ -10,10 +10,11 @@
 #include <string>
 
 #include "blMppShape2D.h"
+#include "blMppExport.h"
 
 /// \class blMppShapeCircle
 /// \brief define a blMppShape circle
-class blMppShapeCircle : public blMppShape2D{
+class BLMPP_EXPORT blMppShapeCircle : public blMppShape2D{
 
 public:
     /// \fn blMppShapeCircle();

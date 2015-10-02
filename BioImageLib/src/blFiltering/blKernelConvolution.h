@@ -7,11 +7,12 @@
 #pragma once
 
 #include <blCore>
+#include "blFilteringExport.h"
 
 /// \class blKernelConvolution
 /// \brief Create a kernel for the blConvolution filter
 /// from a blMatrix or blMatrix3
-class blKernelConvolution{
+class BLFILTERING_EXPORT blKernelConvolution{
 
 public:
     /// \fn blKernelConvolution(const blMatrix &matrix);

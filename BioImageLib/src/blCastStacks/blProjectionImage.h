@@ -7,11 +7,12 @@
 #pragma once
 
 #include <blCore>
+#include "blCastStacksExport.h"
 
 /// \class blZProjection
 /// \brief Project a 3D image along z direction
 /// to obtain a 2D image
-class blZProjection : public blProcess{
+class BLCASTSTACKS_EXPORT blZProjection : public blProcess{
 
 public:
     /// \fn blZProjection();

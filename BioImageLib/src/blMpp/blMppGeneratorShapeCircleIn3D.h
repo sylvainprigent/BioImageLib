@@ -7,10 +7,11 @@
 #pragma once
 #include "blMppShapeCircle.h"
 #include "blMppGeneratorShapeCircle.h"
+#include "blMppExport.h"
 
 /// \class blMppGeneratorShapeCircleIn3D
 /// \brief Generator of 2D circles in each (x,y) layers of a 3D image
-class blMppGeneratorShapeCircleIn3D : public blMppGeneratorShapeCircle {
+class BLMPP_EXPORT blMppGeneratorShapeCircleIn3D : public blMppGeneratorShapeCircle {
 
 public:
     /// \fn blMppGeneratorShapeCircleIn3D();

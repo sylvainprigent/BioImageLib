@@ -10,13 +10,14 @@
 #include <string>
 
 #include "blMppShape3D.h"
+#include "blMppExport.h"
 
 /// \class blMppShapeSuperquadric3D
 /// \brief define a blMppShape superquadric 3D by the equation
 ///  |X-Xc|^m / |a|^m + |Y-Yc|^n / |b|^n + |Z-Zc|^p / |c|^p = 1
 ///  The orientation of the superquadric is represented by 3 angles
 ///  (phi, theta, gamma)
-class blMppShapeSuperquadric3D : public blMppShape3D{
+class BLMPP_EXPORT blMppShapeSuperquadric3D : public blMppShape3D{
 
 public:
     /// \fn blMppShapeSuperquadric3D();

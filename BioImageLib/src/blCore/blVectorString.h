@@ -8,11 +8,12 @@
 
 #include "blData.h"
 #include <vector>
+#include "blCoreExport.h"
 
 /// \class blVectorString
 /// \brief Class defining a vector container.
 /// This contains string vector using the std::vector
-class blVectorString : public blData{
+class BLCORE_EXPORT blVectorString : public blData{
 
 public:
     /// \fn blVectorString();

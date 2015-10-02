@@ -7,10 +7,11 @@
 #pragma once
 
 #include <string>
+#include "blCoreExport.h"
 
 /// \class blStringOperations
 /// \brief Define operations on strings
-class blStringOperations{
+class BLCORE_EXPORT blStringOperations{
 
 public:
     /// \fn static std::string getFileNameFromPath(std::string file);

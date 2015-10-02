@@ -8,12 +8,13 @@
 
 #include "blMppAlgorithm.h"
 #include "blMppContainerConfigShape2D.h"
+#include "blMppExport.h"
 
 /// \class blMppAlgorithmMBCRParallel
 /// \brief Implement the multiple birth and cut algorithm with
 /// binary (ie infinity) repulsion as possible interaction
 /// This implementation call blMppAlgorithmMBCR to make it parallel
-class blMppAlgorithmMBCRParallel : public blMppAlgorithm{
+class BLMPP_EXPORT blMppAlgorithmMBCRParallel : public blMppAlgorithm{
 
 public:
     /// \fn blMppAlgorithmMBCRParallel();

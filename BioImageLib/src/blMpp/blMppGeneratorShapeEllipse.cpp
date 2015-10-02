@@ -48,6 +48,8 @@ void blMppGeneratorShapeEllipse::setMajorAxisRange(int aMin, int aMax){
     m_aMax = aMax;
     m_aRange = m_aMax - m_aMin + 1;
 
+    //std::cout << "set axis ellipse setMajorAxisRange = " << m_aMin << ", " << m_aMax << std::endl;
+
     if (m_aMin <= 0 || m_aMax <= 0 || m_aMin > m_aMax){
         throw( blException("blMppGeneratorShapeEllipse: Major axis setting is not correct"));
     }

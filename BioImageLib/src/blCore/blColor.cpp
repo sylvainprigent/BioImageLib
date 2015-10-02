@@ -12,13 +12,13 @@
 using namespace std;
 
 vector<int> blColor::GetRandRGB(){
-    float golden_ratio_conjugate = 0.618033988749895;
+    float golden_ratio_conjugate = float(0.618033988749895);
     float h = blRandomGeneratorPM::rand();
     h += golden_ratio_conjugate;
     if (h>=1){
         h-=1;
     }
-    return hsv_to_rgb(h, 0.95, 0.95);
+    return hsv_to_rgb(h, float(0.95), float(0.95));
 }
 
 vector<int> blColor::hsv_to_rgb(float h, float s, float v){

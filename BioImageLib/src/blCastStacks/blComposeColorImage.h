@@ -8,10 +8,11 @@
 
 #include <blCore>
 #include "itkComposeImageFilter.h"
+#include "blCastStacksExport.h"
 
 /// \class blComposeColorImage
 /// \brief Create a color image from 3 gray scaled images
-class blComposeColorImage : blProcess{
+class BLCASTSTACKS_EXPORT blComposeColorImage : blProcess{
 
 public:
     /// \fn blComposeColorImage();

@@ -28,3 +28,11 @@ SET(FILE ${SRC_FILES} main.cpp )
 add_executable( ${NAME} ${FILE} )
 target_link_libraries(${NAME} blMpp blTxtIO blCastStacks ${ITK_LIBRARIES} blCore)
 
+
+## #################################################################
+## Exe generation
+## #################################################################
+SET(NAME blMppCmd)
+SET(FILE ${SRC_FILES} cmd.cpp )
+add_executable( ${NAME} ${FILE} )
+target_link_libraries(${NAME} blMpp blTxtIO blCastStacks ${ITK_LIBRARIES} blCore)

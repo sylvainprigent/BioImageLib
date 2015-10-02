@@ -8,10 +8,11 @@
 
 #include "blFilter.h"
 #include "itkMinMaxCurvatureFlowImageFilter.h"
+#include "blFilteringExport.h"
 
 /// \class blMinMaxCurvatureFlowFilter
 /// \brief Denoise an image using min/max curvature flow.
-class blMinMaxCurvatureFlowFilter : public blFilter{
+class BLFILTERING_EXPORT blMinMaxCurvatureFlowFilter : public blFilter{
 
 public:
     /// \fn blMinMaxCurvatureFlowFilter();

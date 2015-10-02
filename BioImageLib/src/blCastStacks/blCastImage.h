@@ -7,11 +7,12 @@
 #pragma once
 
 #include <blCore>
+#include "blCastStacksExport.h"
 
 /// \class blCastImage
 /// \brief Define the interface of the classes
 /// used to cast an image from one type to another
-class blCastImage : public blProcess{
+class BLCASTSTACKS_EXPORT blCastImage : public blProcess{
 
 public:
     /// \fn blCastImage();

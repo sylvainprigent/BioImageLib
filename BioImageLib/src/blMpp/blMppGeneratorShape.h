@@ -9,6 +9,7 @@
 #include <vector>
 #include <blCore>
 #include "blMppShape.h"
+#include "blMppExport.h"
 
 // //////////////////////////////////////////////////////// //
 //                     blMppGeneratorShape
@@ -17,7 +18,7 @@
 /// \brief Class defining the prototype of a Marked Point Process shape generator
 /// This class aims at generating random shapes, and apply perturbations to existing shapes.
 /// A perturbation is defined as a translation, a rotation or a resizing
-class blMppGeneratorShape : public blProcess {
+class BLMPP_EXPORT blMppGeneratorShape : public blProcess {
 
 public:
     /// \fn blMppGeneratorShape();

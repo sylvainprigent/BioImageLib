@@ -7,10 +7,11 @@
 #pragma once
 
 #include "blImageTypes.h"
+#include "blCoreExport.h"
 
 /// \class blImageCopy
 /// \brief class that define static functions to copy different types of images
-class blImageCopy{
+class BLCORE_EXPORT blImageCopy{
 public:
     /// \fn static Int2DImage::Pointer copyInt2DImage(Int2DImage::Pointer image);
     /// \brief Function that copy a Int2DImage image into another

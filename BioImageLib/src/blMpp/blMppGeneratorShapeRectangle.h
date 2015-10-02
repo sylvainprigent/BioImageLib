@@ -7,10 +7,11 @@
 #pragma once
 #include "blMppGeneratorShape.h"
 #include "blMppShapeRectangle.h"
+#include "blMppExport.h"
 
 /// \class blMppGeneratorShapeRectangle
 /// \brief Generator of 2D rectangle defined by blMppShapeRectangle
-class blMppGeneratorShapeRectangle : public blMppGeneratorShape {
+class BLMPP_EXPORT blMppGeneratorShapeRectangle : public blMppGeneratorShape {
 
 public:
     /// \fn blMppGeneratorShapeRectangle();

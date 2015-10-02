@@ -8,12 +8,13 @@
 
 #include "blFilter.h"
 #include "itkBinomialBlurImageFilter.h"
+#include "blFilteringExport.h"
 
 /// \class blBinomialBlurFilter
 /// \brief The binomial blur consists of a nearest neighbor
 /// average along each image dimension. The net result after
 /// n-iterations approaches convultion with a gaussian.
-class blBinomialBlurFilter : public blFilter{
+class BLFILTERING_EXPORT blBinomialBlurFilter : public blFilter{
 
 public:
     /// \fn blBinomialBlurFilter();

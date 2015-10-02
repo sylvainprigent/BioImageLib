@@ -7,10 +7,11 @@
 #pragma once
 
 #include "blImageTypes.h"
+#include "blCoreExport.h"
 
 /// \class blImageIO
 /// \brief class containing static function to load/write various type of images
-class blImageIO{
+class BLCORE_EXPORT blImageIO{
 
 public:
     /// \fn static Int2DImage::Pointer loadToInt2DImage(const std::string filePath);

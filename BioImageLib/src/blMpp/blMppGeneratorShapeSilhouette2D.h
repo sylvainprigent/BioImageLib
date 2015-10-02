@@ -8,10 +8,11 @@
 #pragma once
 #include "blMppGeneratorShape.h"
 #include "blMppShapeSilhouette.h"
+#include "blMppExport.h"
 
 /// \class blMppGeneratorShapeSilhouette2D
 /// \brief Generator of 2D silhouette defined by blMppShapeSilhouette
-class blMppGeneratorShapeSilhouette2D : public blMppGeneratorShape {
+class BLMPP_EXPORT blMppGeneratorShapeSilhouette2D : public blMppGeneratorShape {
 
 public:
     /// \fn blMppGeneratorShapeSilhouette2D();

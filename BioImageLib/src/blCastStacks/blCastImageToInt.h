@@ -8,10 +8,11 @@
 
 #include <blCore>
 #include "blCastImage.h"
+#include "blCastStacksExport.h"
 
 /// \class blCastImageToInt
 /// \brief Cast en image to short int
-class blCastImageToInt : public blCastImage{
+class BLCASTSTACKS_EXPORT blCastImageToInt : public blCastImage{
 
 public:
     /// \fn blCastImageToInt();

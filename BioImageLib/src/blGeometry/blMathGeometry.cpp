@@ -217,11 +217,11 @@ void blMathGeometry::CalculatePixelsCoordinateBorderSphere(std::vector<float> sp
     double euclid;
 
     px.clear(); py.clear(); pz.clear();
-    int r = sphere[3] + borderWidth + 1;
+    int r = int(sphere[3]) + borderWidth + 1;
     float r1 = sphere[3]*sphere[3]; float r2 = pow(sphere[3] + borderWidth, 2);
-    for (int x = sphere[0] - r; x <= sphere[0] + r ; ++x){
-        for (int y = sphere[1] - r; y <= sphere[1] + r ; ++y){
-            for (int z = sphere[2] - r; z <= sphere[2] + r ; ++z){
+    for (int x = int(sphere[0]) - r; x <= int(sphere[0]) + r ; ++x){
+        for (int y = int(sphere[1]) - r; y <= int(sphere[1]) + r ; ++y){
+            for (int z = int(sphere[2]) - r; z <= int(sphere[2]) + r ; ++z){
                 euclid = pow(x - sphere[0],2) + pow(y - sphere[1],2) + pow(z - sphere[2],2);
                 if ( euclid > r1 && euclid <= r2 ){
                     px.push_back(x);

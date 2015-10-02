@@ -8,10 +8,11 @@
 
 #include <blCore>
 #include "blMppShape.h"
+#include "blMppExport.h"
 
 /// \class blMppResultRepresentation
 /// \brief Static function that allows to plot the blMpp detection result into an image
-class blMppResultRepresentation{
+class BLMPP_EXPORT blMppResultRepresentation{
 
 public:
     static blImage *imageRepresentation(std::vector<blMppShape*> shapes, std::string representationType, blImage* image, bool useRandColor = false);

@@ -9,10 +9,11 @@
 #include "blFilter.h"
 #include "itkConvolutionImageFilter.h"
 #include "itkMeanImageFilter.h"
+#include "blFilteringExport.h"
 
 /// \class blMeanFilter
 /// \brief Blur an image by applying a mean filter
-class blMeanFilter : public blFilter{
+class BLFILTERING_EXPORT blMeanFilter : public blFilter{
 
 public:
     /// \fn blMeanFilter();

@@ -8,10 +8,11 @@
 #pragma once
 #include "blMppGeneratorShape.h"
 #include "blMppShapeSuperquadric2D.h"
+#include "blMppExport.h"
 
 /// \class blMppGeneratorShapeTestClusters
 /// \brief Generator of 2D superquadric defined by blMppShapeSuperquadric2D
-class blMppGeneratorShapeTestClusters : public blMppGeneratorShape {
+class BLMPP_EXPORT blMppGeneratorShapeTestClusters : public blMppGeneratorShape {
 
 public:
     /// \fn blMppGeneratorShapeTestClusters();

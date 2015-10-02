@@ -7,12 +7,13 @@
 #pragma once
 
 #include "blProcessObserver.h"
+#include "blCoreExport.h"
 
 /// \class blProcess
 /// \brief Class defining the interface of a process class
 /// It heritates from blProcessObservable to enable the
 /// use of progress messages
-class blProcess : public blProcessObservable{
+class BLCORE_EXPORT blProcess : public blProcessObservable{
 
 public:
     /// \fn blProcess();

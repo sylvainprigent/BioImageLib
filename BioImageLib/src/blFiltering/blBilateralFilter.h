@@ -8,11 +8,12 @@
 
 #include "blFilter.h"
 #include "itkBilateralImageFilter.h"
+#include "blFilteringExport.h"
 
 /// \class blBilateralFilter
 /// \brief Blurs an image while preserving edges.
 /// Bilateral Filtering for Gray and ColorImages. IEEE ICCV. 1998.
-class blBilateralFilter : public blFilter{
+class BLFILTERING_EXPORT blBilateralFilter : public blFilter{
 
 public:
     /// \fn blBilateralFilter();

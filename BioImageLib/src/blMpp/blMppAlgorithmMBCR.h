@@ -8,6 +8,7 @@
 
 #include "blMppAlgorithm.h"
 #include "blMppContainerConfigShape2D.h"
+#include "blMppExport.h"
 
 /// \class blMppAlgorithmMBCR
 /// \brief Implement the multiple birth and cut algorithm with
@@ -18,7 +19,7 @@
 /// ICPRAM - International Conference on Pattern Recognition Applications and Methods, Barcelona, 2013
 /// The graph used in this implementation is a simplification of the graph
 /// decribed in the publication above
-class blMppAlgorithmMBCR : public blMppAlgorithm{
+class BLMPP_EXPORT blMppAlgorithmMBCR : public blMppAlgorithm{
 
 public:
     /// \fn blMppAlgorithmMBCR();

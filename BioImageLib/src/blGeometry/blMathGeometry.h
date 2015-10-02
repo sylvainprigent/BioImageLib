@@ -7,10 +7,11 @@
 #pragma once
 
 #include <vector>
+#include "blGeometryExport.h"
 
 /// \class blMathGeometry
 /// \brief Define geometrical shapes
-class blMathGeometry
+class BLGEOMETRY_EXPORT blMathGeometry
 {
 public:
     static void AddPixel(int x, int y, std::vector<int> &xp, std::vector<int> &yp);

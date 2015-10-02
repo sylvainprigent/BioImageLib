@@ -8,11 +8,12 @@
 
 #include <blCore>
 #include "itkVectorIndexSelectionCastImageFilter.h"
+#include "blCastStacksExport.h"
 
 /// \class blColorImageToGray
 /// \brief Extract a gray scale component (red, green or blue)
 /// from a color image
-class blColorImageToGray : public blProcess{
+class BLCASTSTACKS_EXPORT blColorImageToGray : public blProcess{
 public:
     /// \fn blColorImageToGray();
     /// \brief Constructor

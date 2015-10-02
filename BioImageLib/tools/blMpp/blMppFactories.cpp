@@ -188,7 +188,7 @@ blMppDataTerm* blMppFactory::dataTerm(std::string name){
         blMppDataTermBhattacharyya *dataTerm = new blMppDataTermBhattacharyya();
         dataTerm->setD(m_parameters->getValueOfKey<float>("blMppDataTermBhattacharyya_D",100));
         dataTerm->setGradientDirection(m_parameters->getValueOfKey<int>("blMppDataTermBhattacharyya_gradientDirection",1));
-        dataTerm->setThreshold(m_parameters->getValueOfKey<float>("blMppDataTerm_threshold",3));
+        dataTerm->setThreshold(m_parameters->getValueOfKey<float>("blMppDataTermBhattacharyya_threshold",3));
         dataTerm->setBorderWidth(m_parameters->getValueOfKey<int>("blMppDataTerm_borderWidth",1));
         return dataTerm;
     }

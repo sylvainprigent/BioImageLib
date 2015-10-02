@@ -7,11 +7,12 @@
 #pragma once
 #include "blMppShapeSuperquadric2D.h"
 #include "blMppGeneratorShapeSuperquadric2D.h"
+#include "blMppExport.h"
 
 /// \class blMppGeneratorShapeSuperquadric2DIn3D
 /// \brief Generator of 2D superquadric defined by blMppShapeSuperquadric2D in
 /// any (x,y) layer of a 3D image
-class blMppGeneratorShapeSuperquadric2DIn3D : public blMppGeneratorShapeSuperquadric2D {
+class BLMPP_EXPORT blMppGeneratorShapeSuperquadric2DIn3D : public blMppGeneratorShapeSuperquadric2D {
 
 public:
     /// \fn blMppGeneratorShapeSuperquadric2DIn3D();

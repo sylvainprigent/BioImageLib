@@ -10,10 +10,11 @@
 #include <string>
 
 #include "blMppShape3D.h"
+#include "blMppExport.h"
 
 /// \class blMppShapeSphere
 /// \brief define a blMppShape shpere
-class blMppShapeSphere : public blMppShape3D{
+class BLMPP_EXPORT blMppShapeSphere : public blMppShape3D{
 
 public:
     /// \fn blMppShapeSphere();

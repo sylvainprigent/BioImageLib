@@ -10,11 +10,12 @@
 #include <string>
 
 #include "blMppShape2D.h"
+#include "blMppExport.h"
 
 /// \class blMppShapeSilhouette
 /// \brief define a blMppShape as a any shape loaded from a file
 /// and defined by a silhouette
-class blMppShapeSilhouette : public blMppShape2D{
+class BLMPP_EXPORT blMppShapeSilhouette : public blMppShape2D{
 
 public:
     /// \fn blMppShapeSilhouette();

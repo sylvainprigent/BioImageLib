@@ -7,6 +7,7 @@
 #include "blMppResultRepresentation.h"
 
 #include "itkRescaleIntensityImageFilter.h"
+#include <blCastStacks>
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -30,47 +31,67 @@ blImage* blMppResultRepresentation::imageRepresentation2D(std::vector<blMppShape
                                                         std::string representationType,
                                                         blImage* image, bool useRandColor){
 
-    Float2DImage::Pointer imageRes = image->itkFloat2DImagePointer();
+    std::cout << "representation image type = " << image->imageType() << std::endl;
+    FloatColor2DImage::Pointer resImage = NULL;
 
-    // normalize intensity
-    typedef itk::RescaleIntensityImageFilter< Float2DImage, Float2DImage > RescaleFilterType;
-    RescaleFilterType::Pointer rescaleFilter = RescaleFilterType::New();
-    rescaleFilter->SetInput(imageRes);
-    rescaleFilter->SetOutputMinimum(0);
-    rescaleFilter->SetOutputMaximum(255);
-    rescaleFilter->Update();
-    imageRes = rescaleFilter->GetOutput();
+    if (image->imageType() == blImage::TypeIntColor2D){
+        blCastImageToFloat caster;
+        caster.setInput(image);
+        caster.run();
+        blImage* imageC = caster.output();
+        delete image;
+        image = imageC;
+        imageC = NULL;
+    }
 
-    // create image
-    FloatColor2DImage::Pointer resImage = FloatColor2DImage::New();
+    if (image->imageType() == blImage::TypeFloat2D){
+        Float2DImage::Pointer imageRes = image->itkFloat2DImagePointer();
 
-    FloatColor2DImage::RegionType region;
-    FloatColor2DImage::IndexType start;
-    start[0] = 0;
-    start[1] = 0;
-    region.SetIndex(start);
+        // normalize intensity
+        typedef itk::RescaleIntensityImageFilter< Float2DImage, Float2DImage > RescaleFilterType;
+        RescaleFilterType::Pointer rescaleFilter = RescaleFilterType::New();
+        rescaleFilter->SetInput(imageRes);
+        rescaleFilter->SetOutputMinimum(0);
+        rescaleFilter->SetOutputMaximum(255);
+        rescaleFilter->Update();
+        imageRes = rescaleFilter->GetOutput();
 
-    itk::Image<itk::RGBPixel<float>, 2>::SizeType size;
-    size[0] = image->imageSize().xSize();
-    size[1] = image->imageSize().ySize();
-    region.SetSize(size);
+        // create image
+        resImage = FloatColor2DImage::New();
+        FloatColor2DImage::RegionType region;
+        FloatColor2DImage::IndexType start;
+        start[0] = 0;
+        start[1] = 0;
+        region.SetIndex(start);
 
-    resImage->SetRegions(region);
-    resImage->Allocate();
+        itk::Image<itk::RGBPixel<float>, 2>::SizeType size;
+        size[0] = image->imageSize().xSize();
+        size[1] = image->imageSize().ySize();
+        region.SetSize(size);
 
-    // copy the input image to the rgb output
-    typedef itk::ImageRegionIterator<FloatColor2DImage> IteratorType;
-    typedef itk::ImageRegionIterator<Float2DImage> IteratorTypeFloat;
-    IteratorType iteratorResImage(resImage, resImage->GetLargestPossibleRegion());
-    IteratorTypeFloat iteratorInitImage(imageRes, imageRes->GetLargestPossibleRegion());
+        resImage->SetRegions(region);
+        resImage->Allocate();
 
-    PixelColorFloatType pixel;
-    while(!iteratorInitImage.IsAtEnd()){
-        pixel[0] = iteratorInitImage.Get();
-        pixel[1] = pixel[0]; pixel[2] = pixel[0];
-        iteratorResImage.Set(pixel);
-        ++iteratorResImage;
-        ++iteratorInitImage;
+        // copy the input image to the rgb output
+        typedef itk::ImageRegionIterator<FloatColor2DImage> IteratorType;
+        typedef itk::ImageRegionIterator<Float2DImage> IteratorTypeFloat;
+        IteratorType iteratorResImage(resImage, resImage->GetLargestPossibleRegion());
+        IteratorTypeFloat iteratorInitImage(imageRes, imageRes->GetLargestPossibleRegion());
+
+        PixelColorFloatType pixel;
+        while(!iteratorInitImage.IsAtEnd()){
+            pixel[0] = iteratorInitImage.Get();
+            pixel[1] = pixel[0]; pixel[2] = pixel[0];
+            iteratorResImage.Set(pixel);
+            ++iteratorResImage;
+            ++iteratorInitImage;
+        }
+    }
+    else if(image->imageType() == blImage::TypeFloatColor2D){
+        resImage = image->itkFloatColor2DImagePointer();
+    }
+    else{
+        return new blImage();
     }
 
     // draw pixels on image

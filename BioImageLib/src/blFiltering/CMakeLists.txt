@@ -21,7 +21,7 @@ SET(HEADERS_FILES
   blCurvatureFlowFilter.h
   blDiscreteGaussianFilter.h
   blFilter.h
-  blFrangiFilter.h
+#  blFrangiFilter.h
   blKernelConvolution.h
   blMeanFilter.h
   blMedianFilter.h
@@ -41,7 +41,7 @@ SET(SRCS_FILES
   blCurvatureFlowFilter.cpp
   blDiscreteGaussianFilter.cpp
   blFilter.cpp
-  blFrangiFilter.cpp
+#  blFrangiFilter.cpp
   blKernelConvolution.cpp
   blMeanFilter.cpp
   blMedianFilter.cpp
@@ -64,9 +64,22 @@ target_link_libraries( ${PROJECT_NAME}
   ${ITK_LIBRARIES})
 
 ## #################################################################
+## Export header file
+## #################################################################
+
+add_compiler_export_flags()
+
+generate_export_header(${PROJECT_NAME}
+  EXPORT_FILE_NAME "${PROJECT_NAME}Export.h")
+
+add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD
+  COMMAND ${CMAKE_COMMAND} ARGS -E copy_if_different "${${PROJECT_NAME}_BINARY_DIR}/${PROJECT_NAME}Export.h" "${CMAKE_BINARY_DIR}"
+  COMMAND ${CMAKE_COMMAND} ARGS -E copy_if_different "${${PROJECT_NAME}_BINARY_DIR}/${PROJECT_NAME}Export.h" "${CMAKE_BINARY_DIR}/${PROJECT_NAME}Export")
+
+## #################################################################
 ## SWIG export
 ## #################################################################
-SET_SOURCE_FILES_PROPERTIES(blFiltering.i PROPERTIES CPLUSPLUS ON)
+#SET_SOURCE_FILES_PROPERTIES(blFiltering.i PROPERTIES CPLUSPLUS ON)
 
-SWIG_ADD_MODULE(blFiltering python ${PROJECT_NAME}.i ${SRCS_FILES})
-SWIG_LINK_LIBRARIES(blFiltering ${PYTHON_LIBRARIES} blCore blCastStacks ${ITK_LIBRARIES})
+#SWIG_ADD_MODULE(blFiltering python ${PROJECT_NAME}.i ${SRCS_FILES})
+#SWIG_LINK_LIBRARIES(blFiltering ${PYTHON_LIBRARIES} blCore blCastStacks ${ITK_LIBRARIES})

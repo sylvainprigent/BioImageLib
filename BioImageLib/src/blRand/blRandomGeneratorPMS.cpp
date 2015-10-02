@@ -42,7 +42,7 @@ float blRandomGeneratorPMS::rand(){
     j=iy/NDIV; // Will be in the range 0..NTAB-1.
     iy=iv[j]; // Output previously stored value and refill the
     iv[j] = m_seed; //shuffle table.
-    if ((temp=AM*iy) > RNMX) return RNMX; //Because users don’t expect endpoint values.
+    if ((temp=float(AM)*iy) > float(RNMX)) return float(RNMX); //Because users don’t expect endpoint values.
     else return temp;
 }
 

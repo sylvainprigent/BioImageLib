@@ -6,13 +6,15 @@
 
 #pragma once
 
+#include "blRandExport.h"
+
 /// \class blRandomGeneratorPM
 /// \brief “Minimal” random number generator of Park and Miller. Returns a uniform random deviate
 /// between 0.0 and 1.0. Set or reset idum to any integer value (except the unlikely value MASK)
 /// to initialize the sequence; idum must not be altered between calls for successive deviates in
 /// a sequence.
 /// The period is 2^31-2 = 2.0*10^9
-class blRandomGeneratorPM
+class BLRAND_EXPORT blRandomGeneratorPM
 {
 
 private:

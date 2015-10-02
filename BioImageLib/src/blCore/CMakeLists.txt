@@ -74,13 +74,26 @@ target_link_libraries(${PROJECT_NAME}
   blRand
   ${ITK_LIBRARIES})
 
-add_executable(test main.cpp ${SRC_FILES} ${HEADERS_FILES})
-target_link_libraries(test blRand ${ITK_LIBRARIES})
+#add_executable(test main.cpp ${SRC_FILES} ${HEADERS_FILES})
+#target_link_libraries(test blRand ${ITK_LIBRARIES})
+
+## #################################################################
+## Export header file
+## #################################################################
+
+add_compiler_export_flags()
+
+generate_export_header(${PROJECT_NAME}
+  EXPORT_FILE_NAME "${PROJECT_NAME}Export.h")
+
+add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD
+  COMMAND ${CMAKE_COMMAND} ARGS -E copy_if_different "${${PROJECT_NAME}_BINARY_DIR}/${PROJECT_NAME}Export.h" "${CMAKE_BINARY_DIR}"
+  COMMAND ${CMAKE_COMMAND} ARGS -E copy_if_different "${${PROJECT_NAME}_BINARY_DIR}/${PROJECT_NAME}Export.h" "${CMAKE_BINARY_DIR}/${PROJECT_NAME}Export")
 
 ## #################################################################
 ## SWIG export 
 ## #################################################################
-SET_SOURCE_FILES_PROPERTIES(blCore.i PROPERTIES CPLUSPLUS ON)
+#SET_SOURCE_FILES_PROPERTIES(blCore.i PROPERTIES CPLUSPLUS ON)
 
-SWIG_ADD_MODULE(blCore python blCore.i ${SRC_FILES})
-SWIG_LINK_LIBRARIES(blCore ${PYTHON_LIBRARIES} blRand ${ITK_LIBRARIES})
+#SWIG_ADD_MODULE(blCore python blCore.i ${SRC_FILES})
+#SWIG_LINK_LIBRARIES(blCore ${PYTHON_LIBRARIES} blRand ${ITK_LIBRARIES})

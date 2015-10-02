@@ -18,10 +18,12 @@
 #include <blCore/blException.h>
 #include <blCore/blCast.h>
 
+#include "blTxtIOExport.h"
+
 /// \class blConvert
 /// \brief class that convert string param to variou types
 /// This class declare static functions
-class blConvert{
+class BLTXTIO_EXPORT blConvert{
 public:
     /// \fn static std::string T_to_string(T const &val)
     /// \brief Convert T, which should be a primitive, to a std::string
@@ -66,7 +68,7 @@ public:
 /// then call 'load()' only if the file exist, then set param with 'setValueOfKey'
 /// and finally call 'updateFile()' to save modification into the file.
 
-class blProcessParameters{
+class BLTXTIO_EXPORT blProcessParameters{
 
 private:
     std::map<std::string, std::string> contents;
@@ -130,6 +132,13 @@ public:
             return defaultValue;
 
         return blConvert::string_to_T<ValueType>(contents.find(key)->second);
+    }
+
+    std::string getValueOfKeyString(const std::string& key, const std::string &defaultValue){
+        if (!keyExists(key))
+            return defaultValue;
+
+        return contents.find(key)->second;
     }
 
     /// \fn std::vector<std::string> getVectorStringValuesOfKey(const std::string &key, std::vector<std::string> const &defaultValue) const;

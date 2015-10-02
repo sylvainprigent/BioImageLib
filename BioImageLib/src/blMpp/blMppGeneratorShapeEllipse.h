@@ -7,10 +7,11 @@
 #pragma once
 #include "blMppGeneratorShape.h"
 #include "blMppShapeEllipse.h"
+#include "blMppExport.h"
 
 /// \class blMppGeneratorShapeEllipse
 /// \brief Generator of 2D ellipse defined by blMppShapeEllipse
-class blMppGeneratorShapeEllipse : public blMppGeneratorShape {
+class BLMPP_EXPORT blMppGeneratorShapeEllipse : public blMppGeneratorShape {
 
 public:
     /// \fn blMppGeneratorShapeEllipse();

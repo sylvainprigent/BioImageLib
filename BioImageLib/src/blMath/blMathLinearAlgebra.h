@@ -5,10 +5,11 @@
 /// \date 2014
 
 #pragma once
+#include "blMathExport.h"
 
 /// \class blMathLinearAlgebra
 /// \brief Implement linear algebra algorithms
-class blMathLinearAlgebra
+class BLMATH_EXPORT blMathLinearAlgebra
 {
 public:
     /// \fn static double hypot2(const double& x, const double& y);

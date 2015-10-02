@@ -22,7 +22,7 @@ void blTxtIO::SaveShapesIntoTxtFile(vector< vector<float> > Shapes, string fileP
     if(file)
     {
         if (Shapes.size() > 1){
-            unsigned int ShapeSize = Shapes.at(0).size();
+            unsigned int ShapeSize = int(Shapes.at(0).size());
             for (unsigned int i = 0 ; i < Shapes.size() ; ++i){
                 for (unsigned int j = 0 ; j < ShapeSize ; ++j){
                     file << Shapes[i][j] << "\t";
@@ -46,7 +46,7 @@ void blTxtIO::SaveShapesIntoTxtFile(vector<vector< vector<float> > > Shapes, vec
             for (unsigned int t = 0 ; t < Shapes.size() ; ++t){
                 file << ShapesTypeName[t] << endl;
                 if (Shapes[t].size() > 1){
-                    unsigned int ShapeSize = Shapes[t][0].size();
+                    unsigned int ShapeSize = int(Shapes[t][0].size());
                     for (unsigned int i = 0 ; i < Shapes[t].size() ; ++i){
                         for (unsigned int j = 0 ; j < ShapeSize ; ++j){
                             file << Shapes[t][i][j] << "\t";
@@ -108,7 +108,8 @@ vector<vector<float> > blTxtIO::LoadShapeFromTxtFile(string filePath){
                 // split the line
                 stringstream stream(curentLine);
                 while( getline(stream, readedword, '\t')){
-                    blCast::from_string(readedword, val);
+                    val = std::stod(readedword);
+                    //blCast::from_string(readedword, val);
                     Shape.push_back(val);
                 }
                 Shapes.push_back(Shape);

@@ -19,12 +19,12 @@ HIDE_UNDOC_MEMBERS     = NO
 HIDE_UNDOC_CLASSES     = NO
 
 # PATHS OUT AND IN
-OUTPUT_DIRECTORY = /home/sylvain/codes/BioImageLib/BioImageLib/doc
-STRIP_FROM_PATH = /home/sylvain/codes/BioImageLib/BioImageLib/src/
-INPUT = /home/sylvain/codes/BioImageLib/BioImageLib/src
+OUTPUT_DIRECTORY = C:/Users/sprigent/Documents/codes/BioImageLib/BioImageLib/doc
+STRIP_FROM_PATH = C:/Users/sprigent/Documents/codes/BioImageLib/BioImageLib/src/
+INPUT = C:/Users/sprigent/Documents/codes/BioImageLib/BioImageLib/src
 RECURSIVE = YES
 EXCLUDE_PATTERNS = */external/*
-IMAGE_PATH     = /home/sylvain/codes/BioImageLib/BioImageLib/doc/images/
+IMAGE_PATH     = C:/Users/sprigent/Documents/codes/BioImageLib/BioImageLib/doc/images/
 
 
 # DIAGRAMS GENERATION with "Dot"

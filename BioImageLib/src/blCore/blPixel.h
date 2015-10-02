@@ -5,10 +5,11 @@
 /// \date 2014
 
 #pragma once
+#include "blCoreExport.h"
 
 /// \class blPixel
 /// \brief Container for a pixel index
-class blPixel{
+class BLCORE_EXPORT blPixel{
 
 public:
     /// \fn blPixel();

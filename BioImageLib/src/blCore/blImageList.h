@@ -9,11 +9,12 @@
 #include "blData.h"
 #include "blImage.h"
 #include <vector>
+#include "blCoreExport.h"
 
 /// \class blImageList
 /// \brief Class defining a vector container.
 /// This contains string vector using the std::vector
-class blImageList : public blData{
+class BLCORE_EXPORT blImageList : public blData{
 
 public:
     /// \fn blImageList();

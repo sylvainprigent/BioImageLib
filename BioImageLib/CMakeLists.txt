@@ -42,12 +42,12 @@ include(blDependencies)
 ## #################################################################
 ## Define Internal Architecture (for includes)
 ## #################################################################
-option(bl_BUILD_EXAMPLES "Build Examples" OFF)
+option(bl_BUILD_TOOLS "Build Tools" OFF)
 option(bl_BUILD_TESTS "Build Tests" OFF)
 
 add_subdirectory( src )
-if(bl_BUILD_EXAMPLES)
-  add_subdirectory( examples )
+if(bl_BUILD_TOOLS)
+  add_subdirectory( tools )
 endif(bl_BUILD_EXAMPLES)
 if(bl_BUILD_TESTS)
   add_subdirectory( tests )

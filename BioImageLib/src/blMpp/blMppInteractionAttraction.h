@@ -7,11 +7,12 @@
 #pragma once
 
 #include "blMppInteraction.h"
+#include "blMppExport.h"
 
 /// \class blMppInteractionAttraction
 /// \brief Class that define the interaction between a pair of
 /// ellipse based on attraction between the shapes
-class blMppInteractionAttraction : public blMppInteraction{
+class BLMPP_EXPORT blMppInteractionAttraction : public blMppInteraction{
 
 public:
     /// \fn blMppInteractionAttraction();

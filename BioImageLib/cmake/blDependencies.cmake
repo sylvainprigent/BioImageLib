@@ -34,20 +34,20 @@ endif(OPENMP_FOUND)
 ## #################################################################
 ## SWIG
 ## #################################################################
-FIND_PACKAGE(SWIG REQUIRED)
-if (SWIG_FOUND)
-  INCLUDE(${SWIG_USE_FILE})
+#FIND_PACKAGE(SWIG REQUIRED)
+#if (SWIG_FOUND)
+#  INCLUDE(${SWIG_USE_FILE})
+#
+#  FIND_PACKAGE(PythonLibs REQUIRED)
+#  INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
+#  INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
+#  SET(CMAKE_SWIG_FLAGS "-Wall")
 
-  FIND_PACKAGE(PythonLibs REQUIRED)
-  INCLUDE_DIRECTORIES(${PYTHON_INCLUDE_PATH})
-  INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
-  SET(CMAKE_SWIG_FLAGS "-Wall")
+#  message(STATUS "Using Swig")
 
-  message(STATUS "Using Swig")
-
-else( SWIG_FOUND )
-  message(STATUS "NOT Using Swig")
-endif( SWIG_FOUND )
+#else( SWIG_FOUND )
+#  message(STATUS "NOT Using Swig")
+#endif( SWIG_FOUND )
 
 ## #################################################################
 ## Doxygen

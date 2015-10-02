@@ -7,11 +7,12 @@
 #pragma once
 
 #include <blCore>
+#include "blGeometryExport.h"
 
 /// \class blMathImage
 /// \brief Calculate pixels values for geometrical
 /// shapes located in an image
-class blMathImage
+class BLGEOMETRY_EXPORT blMathImage
 {
 public:
     /// \fn static vector<float> CalculatePixelsValuesInsideSphere(vector<float> sphere, Float3DImage::Pointer image);

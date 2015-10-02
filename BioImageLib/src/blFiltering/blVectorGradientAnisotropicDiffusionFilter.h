@@ -8,10 +8,11 @@
 
 #include "blFilter.h"
 #include "itkVectorGradientAnisotropicDiffusionImageFilter.h"
+#include "blFilteringExport.h"
 
 /// \class blVectorGradientAnisotropicDiffusionFilter
 /// \brief This filter performs anisotropic diffusion on a vector Image
-class blVectorGradientAnisotropicDiffusionFilter : public blFilter{
+class BLFILTERING_EXPORT blVectorGradientAnisotropicDiffusionFilter : public blFilter{
 
 public:
     /// \fn blVectorGradientAnisotropicDiffusionFilter();

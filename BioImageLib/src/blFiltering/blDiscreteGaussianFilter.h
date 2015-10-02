@@ -8,12 +8,13 @@
 
 #include "blFilter.h"
 #include "itkDiscreteGaussianImageFilter.h"
+#include "blFilteringExport.h"
 
 /// \class blDiscreteGaussianFilter
 /// \brief Blurs an image by separable convolution with discrete gaussian kernels.
 /// This filter performs Gaussian blurring by separable convolution of an image
 /// and a discrete Gaussian operator (kernel).
-class blDiscreteGaussianFilter : public blFilter{
+class BLFILTERING_EXPORT blDiscreteGaussianFilter : public blFilter{
 
 public:
     /// \fn blDiscreteGaussianFilter();

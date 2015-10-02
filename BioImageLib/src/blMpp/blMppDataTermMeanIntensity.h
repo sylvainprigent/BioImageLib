@@ -7,12 +7,13 @@
 #pragma once
 
 #include "blMppDataTerm.h"
+#include "blMppExport.h"
 
 /// \class blMppDataTermMeanIntensity
 /// \brief Class that define an Marked Point Process data term
 /// as the Bhattacharyya distance calculated between the distributions
 /// of the pixels inside and the pixels in the border of a shape
-class blMppDataTermMeanIntensity : public blMppDataTerm{
+class BLMPP_EXPORT blMppDataTermMeanIntensity : public blMppDataTerm{
 
 public:
     /// \fn blMppDataTermMeanIntensity();

@@ -12,10 +12,11 @@
 #include <blCore>
 #include "blMppContainerSilhouette.h"
 #include "blMppShapeGraph.h"
+#include "blMppExport.h"
 
 /// \class blMppCluster
 /// \brief Class defining an Shape for a Marked Point Process
-class blMppCluster{
+class BLMPP_EXPORT blMppCluster{
 
 public:
     /// \fn blMppCluster();

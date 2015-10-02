@@ -89,7 +89,8 @@ void blMppGeneratorShapeSilhouetteTemplate2D::initialize(){
                 vector<int> interL;
                 stringstream streamL(line);
                 while( getline(streamL, readedword, '\t')){
-                    blCast::from_string(readedword, val);
+                    val = std::stoi(readedword);
+                    //blCast::from_string(readedword, val);
                     interL.push_back(val);
                 }
 
@@ -98,7 +99,8 @@ void blMppGeneratorShapeSilhouetteTemplate2D::initialize(){
                 vector<int> interR;
                 stringstream streamR(line);
                 while( getline(streamR, readedword, '\t')){
-                    blCast::from_string(readedword, val);
+                    val = std::stoi(readedword);
+                    //blCast::from_string(readedword, val);
                     interR.push_back(val);
                 }
 

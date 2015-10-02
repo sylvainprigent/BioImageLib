@@ -10,10 +10,11 @@
 #include <vector>
 #include <string>
 #include <blCore>
+#include "blMppExport.h"
 
 /// \class blMppShape
 /// \brief Class defining an Shape for a Marked Point Process
-class blMppShape{
+class BLMPP_EXPORT blMppShape{
 
 public:
     /// \fn blMppShape();

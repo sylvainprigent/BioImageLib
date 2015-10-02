@@ -7,10 +7,11 @@
 #pragma once
 
 #include <string>
+#include "blCoreExport.h"
 
 /// \class blImageIOInfo
 /// \brief class containing the informations of an image file
-class blImageIOInfo{
+class BLCORE_EXPORT blImageIOInfo{
 
 public:
     /// \fn blImageIOInfo();

@@ -8,8 +8,9 @@
 #pragma once
 #include <blCore>
 #include <vector>
+#include "blMppExport.h"
 
-class blMppContainerSilhouette3DLine;
+class BLMPP_EXPORT blMppContainerSilhouette3DLine;
 // //////////////////////////////////////////////// //
 //             blMppContainerSilhouette3D
 // /////////////////////////////////////////////// //

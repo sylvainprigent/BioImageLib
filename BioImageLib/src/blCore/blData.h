@@ -7,10 +7,11 @@
 #pragma once
 
 #include <string>
+#include "blCoreExport.h"
 
 /// \class blData
 /// \brief All the class implementing a bioImagelib data must heritate from this class
-class blData{
+class BLCORE_EXPORT blData{
 
 public:
     /// \fn blData();

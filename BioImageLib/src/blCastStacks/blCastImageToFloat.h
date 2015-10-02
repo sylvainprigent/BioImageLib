@@ -8,10 +8,11 @@
 
 #include <blCore>
 #include "blCastImage.h"
+#include "blCastStacksExport.h"
 
 /// \class blCastImageToFloat
 /// \brief Cast en image to float
-class blCastImageToFloat : public blCastImage{
+class BLCASTSTACKS_EXPORT blCastImageToFloat : public blCastImage{
 
 public:
     /// \fn blCastImageToFloat();

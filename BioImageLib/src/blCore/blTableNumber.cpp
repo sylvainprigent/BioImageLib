@@ -58,7 +58,7 @@ void blTableNumber::load(std::string filePath){
 
     vector<float> Shape;
     std::string curentLine, readedword;
-    double val;
+    float val;
     if(file)
     {
         // title
@@ -81,7 +81,8 @@ void blTableNumber::load(std::string filePath){
                 // split the line
                 stringstream stream(curentLine);
                 while( getline(stream, readedword, '\t')){
-                    blCast::from_string(readedword, val);
+                    val = std::stod(readedword);
+                    //blCast::from_string(readedword, val);
                     Shape.push_back(val);
                 }
                 m_data.push_back(Shape);

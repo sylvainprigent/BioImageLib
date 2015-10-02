@@ -7,13 +7,14 @@
 #pragma once
 
 #include "blMppDataTerm.h"
+#include "blMppExport.h"
 
 /// \class blMppDataTermBhattacharyyaCircleConstraint
 /// \brief Class that define an Marked Point Process data term
 /// as the Bhattacharyya distance calculated between the distributions
 /// of the pixels inside and the pixels in the border of a shape
 /// This dataterm is combined with a constraint that favor circle shapes
-class blMppDataTermBhattacharyyaCircleConstraint : public blMppDataTerm{
+class BLMPP_EXPORT blMppDataTermBhattacharyyaCircleConstraint : public blMppDataTerm{
 
 public:
     /// \fn blMppDataTermBhattacharyyaCircleConstraint();

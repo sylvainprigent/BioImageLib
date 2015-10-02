@@ -7,12 +7,13 @@
 #pragma once
 
 #include "blMppDataTerm.h"
+#include "blMppExport.h"
 
 /// \class blMppDataTermBhattacharyya
 /// \brief Class that define an Marked Point Process data term
 /// as the Bhattacharyya distance calculated between the distributions
 /// of the pixels inside and the pixels in the border of a shape
-class blMppDataTermBhattacharyya : public blMppDataTerm{
+class BLMPP_EXPORT blMppDataTermBhattacharyya : public blMppDataTerm{
 
 public:
     /// \fn blMppDataTermBhattacharyya();

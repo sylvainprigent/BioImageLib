@@ -8,11 +8,12 @@
 
 #include <blCore>
 #include "blMppShape.h"
+#include "blMppExport.h"
 
 /// \class blMppDataTerm
 /// \brief Class that define the prototype of an Marked Point Process
 /// data term
-class blMppDataTerm : public blProcess{
+class BLMPP_EXPORT blMppDataTerm : public blProcess{
 
 public:
     /// \fn blMppDataTerm();

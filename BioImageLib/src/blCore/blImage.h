@@ -9,11 +9,12 @@
 #include "blData.h"
 #include "blImageTypes.h"
 #include "blImageSize.h"
+#include "blCoreExport.h"
 
 /// \class blImage
 /// \brief Container that store the images types
-/// used in biolib
-class blImage : public blData{
+/// used in bioimagelib
+class BLCORE_EXPORT blImage : public blData{
 
 public:
     // images types

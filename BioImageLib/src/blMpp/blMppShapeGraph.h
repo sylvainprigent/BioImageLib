@@ -8,10 +8,11 @@
 #pragma once
 
 #include "blMppShape.h"
+#include "blMppExport.h"
 
 /// \class blMppShapeGraph
 /// \brief define methods to link shapes to memorize interactions
-class blMppShapeGraph{
+class BLMPP_EXPORT blMppShapeGraph{
 
 public:
     /// \fn blMppShapeGraph();

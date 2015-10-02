@@ -7,11 +7,12 @@
 #pragma once
 
 #include "blMppInteraction.h"
+#include "blMppExport.h"
 
 /// \class blMppInteractionNoOverlap
 /// \brief Class that define the interaction between a pair of
 /// shape as non overlapping
-class blMppInteractionNoOverlap : public blMppInteraction{
+class BLMPP_EXPORT blMppInteractionNoOverlap : public blMppInteraction{
 
 public:
     /// \fn blMppInteractionNoOverlap();

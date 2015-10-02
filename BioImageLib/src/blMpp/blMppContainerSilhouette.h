@@ -7,6 +7,7 @@
 #pragma once
 #include <blCore>
 #include <vector>
+#include "blMppExport.h"
 
 class blMppContainerSilhouetteLine;
 // //////////////////////////////////////////////// //
@@ -16,7 +17,7 @@ class blMppContainerSilhouetteLine;
 /// \brief contains the silouette of a shape. The silhouette
 /// is defined as set of points pairs defining the entrance and the exit
 /// in the shape when browsing a square around the shape
-class blMppContainerSilhouette{
+class BLMPP_EXPORT blMppContainerSilhouette{
 
 public:
     /// \fn blMppContainerSilhouette();

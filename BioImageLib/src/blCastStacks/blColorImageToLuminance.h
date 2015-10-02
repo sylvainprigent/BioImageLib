@@ -8,10 +8,11 @@
 
 #include <blCore>
 #include "itkRGBToLuminanceImageFilter.h"
+#include "blCastStacksExport.h"
 
 /// \class blColorImageToLuminance
 /// \brief Extract the Luminance component from a color image
-class blColorImageToLuminance : public blProcess{
+class BLCASTSTACKS_EXPORT blColorImageToLuminance : public blProcess{
 public:
     /// \fn blColorImageToLuminance();
     /// \brief Constructor

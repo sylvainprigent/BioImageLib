@@ -10,11 +10,12 @@
 #include <string>
 
 #include "blMppShape2D.h"
+#include "blMppExport.h"
 
 /// \class blMppShapeSuperquadric2D
 /// \brief define a blMppShape superquadric 2D by the equation
 ///  |X-Xc|^m / |a|^m + |Y-Yc|^n / |b|^n = 1
-class blMppShapeSuperquadric2D : public blMppShape2D{
+class BLMPP_EXPORT blMppShapeSuperquadric2D : public blMppShape2D{
 
 public:
     /// \fn blMppShapeSuperquadric2D();

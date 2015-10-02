@@ -7,10 +7,11 @@
 #pragma once
 
 #include <vector>
+#include "blMathExport.h"
 
 /// \class blVectorKMeans
 /// \brief class the split a std::vector or matrix into several classes using the kmeans algorithm
-class blVectorKMeans{
+class BLMATH_EXPORT blVectorKMeans{
 
 public:
     /// \fn blVectorKMeans(std::vector<float> inputVector, int classNumber);

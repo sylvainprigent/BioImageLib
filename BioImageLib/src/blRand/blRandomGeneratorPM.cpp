@@ -23,7 +23,7 @@ float blRandomGeneratorPM::rand(){
     k=(m_seed)/IQ;                //simple bit patterns for idum.
     m_seed=IA*(m_seed-k*IQ)-IR*k; // Compute idum=(IA*idum) % IM without overif
     if (m_seed < 0) m_seed += IM; // flows by Schrage’s method.
-    ans=AM*(m_seed);              // Convert idum to a floating result.
+    ans=float(AM)*float(m_seed);              // Convert idum to a floating result.
     m_seed ^= MASK;               // Unmask before return.
     return ans;
 

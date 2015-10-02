@@ -8,11 +8,12 @@
 #pragma once
 
 #include "blMppInteraction.h"
+#include "blMppExport.h"
 
 /// \class blMppInteractionCircle
 /// \brief Class that define the interaction between a pair of
 /// superquadric circle that does not overlap and are close on to each other
-class blMppInteractionCircle : public blMppInteraction{
+class BLMPP_EXPORT blMppInteractionCircle : public blMppInteraction{
 
 public:
     /// \fn blMppInteractionCircle();

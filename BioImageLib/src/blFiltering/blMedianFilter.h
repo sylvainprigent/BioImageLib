@@ -9,10 +9,11 @@
 #include "blFilter.h"
 #include "itkConvolutionImageFilter.h"
 #include "itkMedianImageFilter.h"
+#include "blFilteringExport.h"
 
 /// \class blMedianFilter
 /// \brief Blur an image by applying a median filter
-class blMedianFilter : public blFilter{
+class BLFILTERING_EXPORT blMedianFilter : public blFilter{
 
 public:
     /// \fn blMedianFilter();

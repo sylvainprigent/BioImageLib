@@ -7,10 +7,11 @@
 #pragma once
 
 #include "blData.h"
+#include "blCoreExport.h"
 
 /// \class blMatrix3D
 /// \brief Cass defining a container for a matrix (in 2D)
-class blMatrix3D : public blData{
+class BLCORE_EXPORT blMatrix3D : public blData{
 
 public:
     /// \fn blMatrix3D();

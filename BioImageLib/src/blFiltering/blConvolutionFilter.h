@@ -8,12 +8,13 @@
 
 #include "blFilter.h"
 #include "itkConvolutionImageFilter.h"
+#include "blFilteringExport.h"
 
 /// \class blConvolutionFilter
 /// \brief Apply a convolution filter to an image
 /// this filter needs a kernel as an input
 /// For vector image, it applie the convolution to each layer independently
-class blConvolutionFilter : public blFilter{
+class BLFILTERING_EXPORT blConvolutionFilter : public blFilter{
 
 public:
     /// \fn blConvolutionFilter();

@@ -8,11 +8,12 @@
 
 #include "blData.h"
 #include <vector>
+#include "blCoreExport.h"
 
 /// \class blVectorNumber
 /// \brief Class defining a vector container.
 /// This contains float vector from the std::vector
-class blVectorNumber : public blData{
+class BLCORE_EXPORT blVectorNumber : public blData{
 
 public:
     /// \fn blVectorNumber();

@@ -1,0 +1,55 @@
+/**
+
+\page pageblAssociationTracking blAssociationTracking: Association Tracking
+  \tableofcontents
+
+
+  The blAssociationTracking toolbox implement the tracking methodology by data association. This methodology needs as an input, the detection of all the targeted objects on each frame of an image sequence. Then, the algorithm extract trajectories of the objects by finding optimal connections between detection on each frame of an image sequence. This is done by a connection cost minimization. This means that for a given application, the user may need to design a specific model. 
+  The data association tracking implementation provided in blAssociationTracking is made of tree components working together as shown in the figure below.
+
+ \image html "../images/blAssociationTrackingDesign.png" 
+
+
+To have an example of how to use this framework, see the tests at BioLib/tests/blAssociationTracking.
+
+To use this framework as a command line, a factory is implemented in BioLib/tools/blAssociationTracking.
+
+
+\section blATModel Cost function
+
+A cost function is defined by the pure virtual class blAtCostInterface.
+
+The role of the cost class is to calculate the cost of connecting two objects in different frames from 
+the detections list. 
+
+To define a new cost, you need to implement the virtual methods described in blAtCostInterface.
+A cost takes as an input the images sequence if the model needs to calculate the cost using image data.
+
+To have the list of all the available cost functions, please refer to the inheritance diagram of blAtCostInterface
+
+\section blATTS Track Sorter
+
+A track sorter is a none mandatory part of the framework. It's role is to select a subset of tracks from the tracker output.
+the track sorter can be seen as a post processing step.
+
+A sorter is defined by the pure virtual class blAtTrackSorterInterface
+
+To have the list of all the track sorters, please refer to the inheritance diagram of blAtTrackSorterInterface
+
+\section blATSG Tracker
+
+A Tracker is defined by the pure virtual class blAtTrackerInterface.
+
+The role of the tracker class is to calculate the the optimal set of tracks from the list of detections
+and the cost function given in inputs.
+After the tracks selection, the tracker run the track sorter as a post processing step. 
+
+To define a new tracker, you need to implement the virtual methods described in blAtTrackerInterface.
+
+To have the list of all the available trackers, please refer to the inheritance diagram of blAtTrackerInterface
+
+\section blATTrack Tracks list
+
+The list of tracks given as an output is made using a vector of blAtTrack 
+
+*/

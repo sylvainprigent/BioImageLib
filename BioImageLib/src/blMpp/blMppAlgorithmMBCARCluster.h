@@ -10,12 +10,13 @@
 #include "blMppContainerConfigShape2D.h"
 #include "blMppShapeSuperquadric2D.h"
 #include "blMppCluster.h"
+#include "blMppExport.h"
 
 /// \class blMppAlgorithmMBCARCluster
 /// \brief Implement the multiple birth and cut algorithm with
 /// attraction and repulsion as possible interaction. This implementation
 /// merge in clusters objects that intersect after a cut
-class blMppAlgorithmMBCARCluster : public blMppAlgorithm{
+class BLMPP_EXPORT blMppAlgorithmMBCARCluster : public blMppAlgorithm{
 
 public:
     /// \fn blMppAlgorithmMBCARCluster();

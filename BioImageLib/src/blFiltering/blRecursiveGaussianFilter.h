@@ -8,13 +8,14 @@
 
 #include "blFilter.h"
 #include "itkSmoothingRecursiveGaussianImageFilter.h"
+#include "blFilteringExport.h"
 
 /// \class blRecursiveGaussianFilter
 /// \brief Computes the smoothing of an image by convolution with the
 /// Gaussian kernels implemented as IIR filters.
 /// This filter is implemented using the recursive gaussian filters.
 /// For multi-component images, the filter works on each component independently.
-class blRecursiveGaussianFilter : public blFilter{
+class BLFILTERING_EXPORT blRecursiveGaussianFilter : public blFilter{
 
 public:
     /// \fn blRecursiveGaussianFilter();
