@@ -6,6 +6,7 @@
 
 #include "blDistributionInfo.h"
 #include <algorithm>
+#include <math.h>
 
 blDistributionInfo::blDistributionInfo(){
 

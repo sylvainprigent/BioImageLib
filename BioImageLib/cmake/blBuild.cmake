@@ -84,6 +84,9 @@ endif()
 ## #################################################################
 ## Build option
 ## #################################################################
+#if(CMAKE_COMPILER_IS_GNUCXX)
+#    add_definitions(-std=gnu++0x)
+#endif()
 # Compilation Option
 #SET(CPPFLAGS "-D_LINUX_ -D_ANSI_ -UNO_PROTO")
 #SET(CFLAGS "-ansi -Wall -fsigned-char -fsigned-bitfields -O")

@@ -18,14 +18,12 @@ SET(SRC_FILES
     blSPoint.cpp
     blSTrack.cpp
     blSTracks.cpp
-    blSTracksImport.cpp
    )
 
 SET(HEADERS_FILES
     blSPoint.h
     blSTrack.h
     blSTracks.h
-    blSTracksImport.h
    )
 
 ## #################################################################

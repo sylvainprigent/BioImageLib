@@ -325,8 +325,8 @@ void blSTracks::loadTracksFromTxtFile(std::string fileName){
                 vector<float> inter;
                 stringstream stream(line);
                 while( getline(stream, readedword, '\t')){
-                    val = float(std::stod(readedword));
-                    //blCast::from_string(readedword, val);
+                    //val = float(std::stod(readedword));
+                    blCast::from_string(readedword, val);
                     inter.push_back(val);
                 }
                 curentpoints.push_back(inter);

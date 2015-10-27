@@ -10,6 +10,7 @@
 #include <iostream>
 #include <sstream>
 #include <fstream>
+#include <string>
 using namespace std;
 
 blTableNumber::blTableNumber(){
@@ -81,8 +82,8 @@ void blTableNumber::load(std::string filePath){
                 // split the line
                 stringstream stream(curentLine);
                 while( getline(stream, readedword, '\t')){
-                    val = std::stod(readedword);
-                    //blCast::from_string(readedword, val);
+                    //val = stod(readedword);
+                    blCast::from_string(readedword, val);
                     Shape.push_back(val);
                 }
                 m_data.push_back(Shape);
