@@ -278,12 +278,12 @@ void blAtTrackerInterface::saveTimeTracksRepresentation(string rootFileName){
         blImageIO::saveFloatColor3DImage(rootFileName, resImage, true);
     }
     else{
-
-        FloatColor3DImage::IndexType index3d;
+       FloatColor3DImage::IndexType index3d;
         Float2DImage::IndexType index2d;
         FloatColor3DImage::PixelType pixel3d;
 
         // Create the output image and copy the inputs
+
         Float2DImage::Pointer image = blImageIO::loadToFloat2DImage(m_framesFiles.at(0));
         // normalize intensity
         typedef itk::RescaleIntensityImageFilter< Float2DImage, Float2DImage > RescaleFilterType;

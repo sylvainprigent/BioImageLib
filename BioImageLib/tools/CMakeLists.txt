@@ -31,4 +31,10 @@ if(bl_HAVE_LEMON)
 endif(bl_HAVE_LEMON)
 endif()
 
+if(bl_BUILD_RAT)
+if(bl_HAVE_LEMON)
+  add_subdirectory( blRAT )
+endif(bl_HAVE_LEMON)
+endif(bl_BUILD_RAT)
+
 add_subdirectory( blFishScript )

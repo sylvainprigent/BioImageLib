@@ -13,6 +13,7 @@
 ## #################################################################
 option(bl_BUILD_MPP "Build mpp" false)
 option(bl_BUILD_AT "Build association tracking" false)
+option(bl_BUILD_RAT "Build recursive association tracking" false)
 
 ## #################################################################
 ## Add subdirectory
@@ -48,3 +49,11 @@ if(bl_HAVE_LEMON)
   message(STATUS "use association tracking")
 endif(bl_HAVE_LEMON)
 endif(bl_BUILD_AT)
+
+message(STATUS "check use recursive association tracking")
+if(bl_BUILD_RAT)
+if(bl_HAVE_LEMON)
+  add_subdirectory( blRAT )
+  message(STATUS "use association tracking")
+endif(bl_HAVE_LEMON)
+endif(bl_BUILD_RAT)
