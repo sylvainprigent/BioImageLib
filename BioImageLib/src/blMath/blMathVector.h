@@ -126,9 +126,10 @@ class BLMATH_EXPORT blMathVector {
     static std::vector<T> cross(std::vector<T> u, std::vector<T> v);
 
   /// \fn template<typename T> static std::vector<T> cross(T u1, T u2, T u3, T v1, T v2, T v3)
-  /// \brief Function that calculates the cross product between two 3d std::vectors
+  /// \brief Function that calculates the cross product between two 3d vectors
   template<typename T>
     static std::vector<T> cross(T u1, T u2, T u3, T v1, T v2, T v3);
+
 };
 
 #include "blMathVector.tpp"

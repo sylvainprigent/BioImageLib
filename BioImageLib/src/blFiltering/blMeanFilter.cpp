@@ -19,6 +19,10 @@ std::string blMeanFilter::name(){
     return "blMeanFilter";
 }
 
+void blMeanFilter::setRadius(int radius){
+    m_radius = radius;
+}
+
 void blMeanFilter::run(){
     if (m_inputImage->imageType() == blImage::TypeInt2D){
 

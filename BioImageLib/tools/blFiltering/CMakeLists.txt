@@ -11,18 +11,15 @@
 # Project name
 project(blFilteringTools)
 
-## #################################################################
-## Define files
-## #################################################################
-include_directories(${BL_CORE_INCLUDE_DIR})
-
-SET(SRC_FILES  
-			   )
 
 ## #################################################################
 ## Exe generation
 ## #################################################################
-SET(NAME blMedianFilter)
-SET(FILE ${SRC_FILES} blMedianFilter.cpp )
-add_executable( ${NAME} ${FILE} )
-target_link_libraries(${NAME} blTxtIO blCastStacks blFiltering ${ITK_LIBRARIES} blCore)
+add_executable( blMedianFilter blMedianFilter.cpp )
+target_link_libraries(blMedianFilter blTxtIO blCastStacks blFiltering ${ITK_LIBRARIES} blCore)
+
+add_executable( blMeanFilter blMeanFilter.cpp )
+target_link_libraries(blMeanFilter blTxtIO blCastStacks blFiltering ${ITK_LIBRARIES} blCore)
+
+add_executable( blGaussianFilter blGaussianFilter.cpp )
+target_link_libraries(blGaussianFilter blTxtIO blCastStacks blFiltering ${ITK_LIBRARIES} blCore)

@@ -160,8 +160,8 @@ int main(int argc, char* argv[] ){
         tracker->calculateTracks();
 
         // Save the result
-        tracker->saveTracksToTxtFile(outputImageName + ".txt");
-        tracker->saveTimeTracksRepresentationFull(outputImageName + "_full.tif");
+        tracker->saveTracksToTxtFile(outputImageName + "tracks.txt");
+        tracker->saveTimeTracksRepresentationFullIndividual(outputImageName);
 
         vector<blAtTrack*> tracks = tracker->output();
         cout << "number of tracks = " << tracks.size() << endl;

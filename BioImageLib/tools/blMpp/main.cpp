@@ -78,8 +78,11 @@ int main(int argc, char *argv[]){
 
         // run
         dataTerm->initialize();
+        std::cout << "initialize generator " << std::endl;
         generator->initialize();
+        std::cout << "initialize interaction " << std::endl;
         interaction->initialize();
+        std::cout << "compute" << std::endl;
         algorithm->compute();
 
         cout << "get shapes" << endl;

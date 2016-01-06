@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <blMppFactories.h>
+#include "blMppFactories.h"
 #include <blTxtIO>
 #include <blMpp>
 #include <blCastStacks>
@@ -58,6 +58,7 @@ int main(int argc, char* argv[])
         parser.addArg("blMppDataTerm_borderWidth");
         parser.addArg("blMppInteractionNoOverlap_overlapCoef");
         parser.addArg("blMppInteractionNoOverlap_minZDistance");
+        parser.addArg("blMppGeneratorShapeSilhouetteTemplate2D_libraryFile");
 
         parser.setUsage(usage(argv[0]));
         blProcessParameters* parameters = parser.parse(2);

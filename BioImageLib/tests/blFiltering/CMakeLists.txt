@@ -26,7 +26,7 @@ set(${PROJECT_NAME}_MAIN_SOURCES
   blDiscreteGaussianFilter.cpp
 #  blFrangiFilter.cpp
   blKernelConvolution.cpp
-  blMeanFilter.cpp
+  blMeanFilterTest.cpp
   blMedianFilterTest.cpp
   blMinMaxCurvatureFlowFilter.cpp
   blRecursiveGaussianFilter.cpp

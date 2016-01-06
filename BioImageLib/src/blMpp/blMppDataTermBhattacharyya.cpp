@@ -164,25 +164,28 @@ float blMppDataTermBhattacharyya::compute(blMppShape* shape){
     }
 
     if (decisionGradient){
-        return 5;
-        //dB = 0;
+        return 1;
     }
     else {
         float epsilon = 0.0000001;
-        if (varIn < epsilon)
+        //std::cout << "vars = " << varIn << ", " << varBorder << std::endl;
+        if (varIn < epsilon || blMath::isNan(varIn))
         {
-            varIn += epsilon;
+            varIn = epsilon;
+            return 1;
         }
-        if (varBorder < epsilon)
+        if (varBorder < epsilon || blMath::isNan(varBorder))
         {
-            varBorder += epsilon;
+            varBorder = epsilon;
+            return 1;
         }
+        //std::cout << "vars = " << varIn << ", " << varBorder << std::endl;
         dB =  pow(meanIn - meanBorder,2)/(4*sqrt(varIn+varBorder)) + 0.5* log((varIn+varBorder) / (2*sqrt(sqrt(varIn)*sqrt(varBorder))));
     }
 
     //cout << "dB = " << dB << endl;
     //std::cout << "blMppDataTermBhattacharyya::compute end" << std::endl;
-    if (blMath::isNan(dB)){dB = 0;}
+    if (blMath::isNan(dB)){return 1;}
     if (dB < m_threshold){
         return (1- dB/m_threshold);
     }

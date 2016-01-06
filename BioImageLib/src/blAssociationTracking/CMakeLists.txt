@@ -24,6 +24,7 @@ SET(SRC_FILES
     blAtConnection.cpp
     blAtCostEuclidean.cpp
     blAtCostLine.cpp
+    blAtCostLineSize.cpp
     blAtDetection.cpp
     blAtTrack.cpp
     blAtTrackerGraphDetections.cpp
@@ -37,6 +38,7 @@ SET(HEADERS_FILES
     blAtCostInterface.h
     blAtConnection.h
     blAtCostEuclidean.h
+    blAtCostLine.h
     blAtCostLine.h
     blAtDetection.h
     blAtTrack.h

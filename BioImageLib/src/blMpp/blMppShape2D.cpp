@@ -109,13 +109,28 @@ void blMppShape2D::computeBorderPixels(int borderWidth){
 
 void blMppShape2D::computeNormalsBorder(){
 
+
+    //std::cout << "border size = " << m_borderPixels->size() << std::endl;
+    //for(int i = 0 ; i <m_borderPixels->size() ; ++i ){
+    //    std::cout << "border : (" << m_borderPixels->at(i).x() <<  ", " << m_borderPixels->at(i).y() << ")" << std::endl;
+    //}
+
     m_normalsBorder = new std::vector<std::vector<float> >();
     m_normalsBorder->resize(m_borderPixels->size());
     for (int i = 0 ; i < m_borderPixels->size() ; ++i){
+
+        //std::cout << "border process pixel at " << i << std::endl;
         // get the 2 neigbooring points
         vector<blPixel> neighboors;
         findClosestPixels(i, neighboors);
 
+        /*
+        std::cout << "calculate the normal at " << i << std::endl;
+        std::cout << "neighboors size = " << neighboors.size() << std::endl;
+        for(int b =0 ; b < neighboors.size() ; ++b){
+            std::cout << "neighboors : (" << neighboors.at(b).x() <<  ", " << neighboors.at(b).y() << ")" << std::endl;
+        }
+        */
         // calculate the normal
         float x = neighboors[1].x() - neighboors[0].x();
         float y = neighboors[1].y() - neighboors[0].y();
@@ -123,6 +138,7 @@ void blMppShape2D::computeNormalsBorder(){
         x /= norm;
         y /= norm;
 
+        //std::cout << "is inside at " << i << std::endl;
         if (this->silhouette()->isInside(blPixel(m_borderPixels->operator [](i).x() -int(y+0.5),m_borderPixels->operator [](i).y() + int(x+0.5)))){
             vector<float> normal; normal.resize(2);
             normal[0] = -y;
@@ -142,25 +158,37 @@ void blMppShape2D::computeNormalsBorder(){
 void blMppShape2D::findClosestPixels(int pos, vector<blPixel> &neighboors){
 
     blPixel ref = m_borderPixels->operator [](pos);
-    for (int x = ref.x()-1 ; ref.x() +1 ; ++x){
-        for (int y = ref.y()-1 ; y < ref.y() +1 ; ++y)
+
+    //std::cout << "find closest to : " << ref.x() << ", " << ref.y() << std::endl;
+
+    for (int x = ref.x()-1 ; x <= ref.x() +1 ; ++x){
+        for (int y = ref.y()-1 ; y <= ref.y() +1 ; ++y)
         {
-            if ( x != ref.x() && y != ref.y()){
+            //std::cout << "x : " << x << ",y : " << y << std::endl;
+            if ( x == ref.x() && y == ref.y() ){
+            }
+            else{
                 if (isPointInBorder(x, y)){
                     neighboors.push_back(blPixel(x,y));
                 }
             }
         }
     }
+    //std::cout << "find closest to : " << ref.x() << ", " << ref.y() << " done " << std::endl;
 }
 
 bool blMppShape2D::isPointInBorder(int x, int y){
+
+    //std::cout << "is point in border" << std::endl;
+
     for (int i = 0 ; i < m_borderPixels->size() ; ++i){
         blPixel curent = m_borderPixels->operator [](i);
         if (curent.x() == x && curent.y() == y){
+            //std::cout << "is point in border yes" << std::endl;
             return true;
         }
     }
+    //std::cout << "is point in border done" << std::endl;
     return false;
 }
 

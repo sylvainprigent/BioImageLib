@@ -62,6 +62,7 @@ void blAtCostLine::loadDataCurentFrames(int frame1, int frame2){
         delete m_featureImage;
     }
     string fileName = blStringOperations::getFileNameFromPath(m_framesFiles[frame2]);
+    fileName.replace(fileName.end()-4,fileName.end(),".png");
 
     m_featureImage = new blImage(m_lineImageDir + fileName);
     if ( m_featureImage->imageType() == blImage::TypeInt2D){

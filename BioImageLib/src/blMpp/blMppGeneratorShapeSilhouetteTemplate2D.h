@@ -39,6 +39,8 @@ public:
     /// \param[in] file File containing the silhouette library
     void setSilhouetteLibraryFile(std::string file);
 
+    std::vector<blMppShapeSilhouette*> shapesLibrary();
+
 public:
     /// \fn void initialize();
     /// \brief reimplemented from blMppGeneratorShape

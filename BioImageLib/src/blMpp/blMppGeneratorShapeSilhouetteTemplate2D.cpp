@@ -68,10 +68,16 @@ void blMppGeneratorShapeSilhouetteTemplate2D::initialize(){
         bool already_fill_line = false;
         while ( std::getline( file, line ) )
         {
+
+            //std::cout << "line = " << line << std::endl;
             std::size_t found_silhouette = line.find(silhouette);
             std::size_t found_new_line = line.find(new_line);
             if (found_silhouette!=std::string::npos){
                 if (already_found_a_silhouette){
+                    curentSilhouette->addLine(curentLine);
+                    curentLine.clear();
+                    already_fill_line = false;
+
                     addSilhouette(curentSilhouette);
                 }
                 curentSilhouette = new blMppContainerSilhouette();
@@ -79,6 +85,7 @@ void blMppGeneratorShapeSilhouetteTemplate2D::initialize(){
             }
             else if(found_new_line!=std::string::npos){
                 if(already_fill_line){
+                    //std::cout << "add line to silhouette" << std::endl;
                     curentSilhouette->addLine(curentLine);
                 }
                 curentLine.clear();
@@ -104,9 +111,11 @@ void blMppGeneratorShapeSilhouetteTemplate2D::initialize(){
                     interR.push_back(val);
                 }
 
+                //std::cout << "add point pair = " << interL[0] << interL[1] << interL[2] << interR[0] << interR[1] << interR[2] << std::endl;
                 curentLine.addPointPair(blPixel(interL[0], interL[1], interL[2]), blPixel(interR[0], interR[1], interR[2]));
             }
         }
+        //std::cout << "add line" << std::endl;
         curentSilhouette->addLine(curentLine);
         addSilhouette(curentSilhouette);
         file.close();
@@ -119,10 +128,10 @@ void blMppGeneratorShapeSilhouetteTemplate2D::initialize(){
 
 void blMppGeneratorShapeSilhouetteTemplate2D::addSilhouette(blMppContainerSilhouette *silhouette){
 
-    std::cout << "add silhouette to library" << std::endl;
+    //std::cout << "add silhouette to library" << std::endl;
     silhouette->calculateArea();
     int maxLength = silhouette->silhouetteMaxLength();
-    silhouette->printConsole();
+    //silhouette->printConsole();
     if (maxLength > m_maxLength){
         m_maxLength = maxLength;
     }
@@ -136,14 +145,20 @@ void blMppGeneratorShapeSilhouetteTemplate2D::addSilhouette(blMppContainerSilhou
     newShape->setSilhouette(silhouette);
     newShape->setMaxDistanceToBarycenter(maxLength);
     if (m_calculateBorderPixels){
-        std::cout << "conpute border pixels " << std::endl;
+        //std::cout << "conpute border pixels " << std::endl;
         newShape->computeBorderPixels(m_borderWidth);
-        std::cout << "conpute border pixels done" << std::endl;
+        //std::cout << "conpute border pixels done" << std::endl;
     }
     if (m_calculateNormals){
+        std::cout << "compute border normal" << std::endl;
         newShape->computeNormalsBorder();
+        std::cout << "compute border normal done" << std::endl;
     }
-    std::cout << "add silhouette to library end" << std::endl;
+    //std::cout << "add silhouette to library end" << std::endl;
+}
+
+std::vector<blMppShapeSilhouette*> blMppGeneratorShapeSilhouetteTemplate2D::shapesLibrary(){
+    return m_shapeLibrary;
 }
 
 blMppShape* blMppGeneratorShapeSilhouetteTemplate2D::generateRandomUsingMask(){

@@ -30,6 +30,19 @@ blAtCostInterface* blAtFactories::cost(std::string name){
         cost->setLineImageDir(m_parameters->getValueOfKey<std::string>("blAtCostLine_lineImagesDir", ""));
         return cost;
     }
+    if (name == "blAtCostLineSize"){
+        blAtCostLineSize* cost = new blAtCostLineSize;
+        cost->setMaxMove(m_parameters->getValueOfKey<float>("blAtCostLineSize_maxMovX", 10.0),
+                         m_parameters->getValueOfKey<float>("blAtCostLineSize_maxMovY", 10.0));
+
+        cost->setMinMove(m_parameters->getValueOfKey<float>("blAtCostLineSize_minMove", 0));
+        cost->setLineImageDir(m_parameters->getValueOfKey<std::string>("blAtCostLineSize_lineImagesDir", ""));
+        cost->setCoefficients(m_parameters->getValueOfKey<float>("blAtCostLineSize_alpha", 1.0),
+                              m_parameters->getValueOfKey<float>("blAtCostLineSize_beta", 1.0),
+                              m_parameters->getValueOfKey<float>("blAtCostLineSize_gamma", 1.0));
+        return cost;
+    }
+
     if (name == "blAtCostLineEuclidean"){
         blAtCostLineEuclidean* cost = new blAtCostLineEuclidean;
         cost->setMaxMove(m_parameters->getValueOfKey<float>("blAtCostLineEuclidean_maxMovX", 10.0),
@@ -37,7 +50,8 @@ blAtCostInterface* blAtFactories::cost(std::string name){
 
         cost->setMinMove(m_parameters->getValueOfKey<float>("blAtCostLineEuclidean_minMove", 0));
         cost->setCoefficients(m_parameters->getValueOfKey<float>("blAtCostLineEuclidean_alpha", 0.5),
-                              m_parameters->getValueOfKey<float>("blAtCostLineEuclidean_beta", 0.5));
+                              m_parameters->getValueOfKey<float>("blAtCostLineEuclidean_beta", 0.5)
+                              );
         cost->setLineImageDir(m_parameters->getValueOfKey<std::string>("blAtCostLineEuclidean_lineImagesDir", ""));
         return cost;
     }

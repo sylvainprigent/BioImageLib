@@ -20,10 +20,6 @@ blAtCostInterface::~blAtCostInterface(){
 
 }
 
-float blAtCostInterface::calculatePairConnectionCost(blAtConnection* connection1, blAtConnection* connection2){
-    return 0;
-}
-
 // -------------------- Getters -----------------------------
 void blAtCostInterface::setObjects(vector<vector<vector<float> > > &objects){
     m_objects = objects;

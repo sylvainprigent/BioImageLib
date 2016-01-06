@@ -29,12 +29,20 @@ public:
     virtual std::string name();
 
 public:
+    // parameters
+    ///
+    /// \brief setRadius
+    /// \param radius Radius of the filter
+    void setRadius(int radius);
+
+public:
     // IO
     /// \fn void run();
     /// \brief Implement from blFilter
     void run();
 
 private:
+    int m_radius; ///< size of the filter
     blImage* meanOnOneComponent(blImage* input, unsigned int index);
 
     template<typename InputImageType>
@@ -42,6 +50,7 @@ private:
         typedef itk::MeanImageFilter<InputImageType, InputImageType > FilterType;
         typename FilterType::Pointer medianFilter = FilterType::New();
         medianFilter->SetInput( image );
+        medianFilter->SetRadius(m_radius);
         medianFilter->Update();
         return new blImage(medianFilter->GetOutput());
     }

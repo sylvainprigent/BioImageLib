@@ -96,11 +96,17 @@ public:
     /// \param[in] rootFileName Name of the file where the result is save
     void saveTimeTracksRepresentationOneFrame(std::string rootFileName);
 
-    /// \fn void blAtTrackerInterface::SaveTimeTracksRepresentationFull(std::string rootFileName);
-    /// \brief Save the tracking result in a list of images representing the time evolution
+    /// \fn void SaveTimeTracksRepresentationFull(std::string rootFileName);
+    /// \brief Save the tracking result in a stack image representing the time evolution
     /// all the track (before curent time) is represented at each time
     /// \param[in] rootFileName Name of the file where the result is save
     void saveTimeTracksRepresentationFull(std::string rootFileName);
+
+    /// \fn void saveTimeTracksRepresentationFullIndividual(string rootFileName);
+    /// \brief Save the tracking result in a list of images representing the time evolution
+    /// all the track (before curent time) is represented at each time
+    /// \param[in] rootFileName Name of the file where the result is save
+    void saveTimeTracksRepresentationFullIndividual(string rootFileName);
 
     /// \fn void calculateTracks();
     /// \brief Calculate the tracks from the connection list.
@@ -143,6 +149,9 @@ public:
     /// \param[in] framesFiles List of the files containing the frames
     /// \param[in] objects List of detected objects in each frame object [frame][rank object][object info]
     void setInputs(blAtCostInterface *costFunction, std::vector<std::string> framesFiles, std::vector<std::vector<std::vector<float> > > objects);
+
+protected:
+    FloatColor2DImage::Pointer getIndividualRepresentationImage(std::string imageType, int nl, int nc, int i);
 
 protected:
     // intermediate data

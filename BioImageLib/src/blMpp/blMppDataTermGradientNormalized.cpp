@@ -73,14 +73,20 @@ void blMppDataTermGradientNormalized::initialize(){
     }
 
     // gradient image
+    std::cout << "Calculate gradient image" << std::endl;
     calculateGradientImage();
+    std::cout << "Calculate gradient image done" << std::endl;
 
     // init threshold function
     initGradientFunctionsPointers();
+    std::cout << "initialize done" << std::endl;
 }
 
 void blMppDataTermGradientNormalized::calculateGradientImage(){
     if (m_is2DImage){
+
+        std::cout << "calculate 2D gradient image, sigma = " << m_sigma << std::endl;
+
         // compute the gradient image
         typedef itk::CovariantVector< float, 2  > OutputPixelType;
         typedef itk::Image< float,  2 > InputImageType;

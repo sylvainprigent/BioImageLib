@@ -2,6 +2,7 @@
 #include "../src/blAssociationTracking/blAtConnection.h"
 #include "../src/blAssociationTracking/blAtCostEuclidean.h"
 #include "../src/blAssociationTracking/blAtCostLine.h"
+#include "../src/blAssociationTracking/blAtCostLineSize.h"
 #include "../src/blAssociationTracking/blAtCostLineEuclidean.h"
 #include "../src/blAssociationTracking/blAtDetection.h"
 #include "../src/blAssociationTracking/blAtTrack.h"

@@ -71,3 +71,18 @@ else( LEMON_FOUND )
   message(STATUS "NOT Using Lemon")
 endif( LEMON_FOUND )
 
+## #################################################################
+## Qt5
+## #################################################################
+# Find includes in corresponding build directories
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+# Instruct CMake to run moc automatically when needed.
+set(CMAKE_AUTOMOC ON)
+
+# Find the QtWidgets library
+find_package(Qt5Widgets QUIET)
+if(Qt5Widgets_FOUND)
+    set(bl_HAVE_Qt5 1)
+else( Qt5Widgets_FOUND )
+  message(STATUS "NOT Using Qt5")
+endif(Qt5Widgets_FOUND)

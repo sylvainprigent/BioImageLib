@@ -14,7 +14,7 @@
 //              blAtCostInterface
 // //////////////////////////////////////////////// //
 /// \class blAtCostInterface
-/// \brief Virtual class defining the interface of a cost calculator for association tracking
+/// \brief Virtual class defining the interface of a cost calculator for theassociationTracker
 class BLASSOCIATIONTRACKING_EXPORT blAtCostInterface : public blProcess{
 
 public:
@@ -45,14 +45,13 @@ public:
     /// \return the connection cost
     float calculatePairConnectionCost(blAtConnection *connection1, blAtConnection *connection2);
 
-    /// \fn virtual bool isProbability() = 0;
+    /// \fn virtual bool IsProbability();
     /// \brief Method used to specify the optimizer is the cost is a probability (in [0 1])
     /// or else, any positive number
-    /// \return true if the cost is a probability
     virtual bool isProbability() = 0;
 
     // -------------------- Setters -----------------------------
-    /// \fn void setObjects(std::vector<std::vector<std::vector<float> > > &objects);
+    /// \fn void SetObjects(std::vector<std::vector<std::vector<float> > > &objects);
     /// \brief Function used to load the objects (called by the optimizer)
     void setObjects(std::vector<std::vector<std::vector<float> > > &objects);
 
@@ -61,7 +60,7 @@ public:
     /// \param[in] framesFiles list of the frames names
     void setFramesPath(std::vector<std::string> &framesFiles);
 
-    /// \fn void setLParameterFromOptimizer(float L);
+    /// \fn void SetLParameterFromOptimizer(float L);
     /// Set the L parameter from the association tracker
     void setLParameterFromOptimizer(float L);
 
