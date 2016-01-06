@@ -5,6 +5,7 @@
 /// \date 2015
 
 #include "blRATObjectsManager.h"
+#include "blCore/blCast.h"
 
 #include <iostream>
 #include <sstream>
