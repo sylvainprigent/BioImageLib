@@ -8,6 +8,7 @@
 
 #include "blRATState.h"
 #include <vector>
+#include <string>
 
 /// \class blRATObjectsManager
 /// \brief Class allowing to store an object state for RAT tracking
