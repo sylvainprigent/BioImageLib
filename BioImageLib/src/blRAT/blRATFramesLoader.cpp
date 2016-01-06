@@ -27,7 +27,7 @@ void blRATFramesLoader::setFramesUrls(std::vector<std::string> framesUrls){
 }
 
 unsigned int blRATFramesLoader::frameNumber(){
-    return unsigned int(m_framesUrls.size());
+    return unsigned(m_framesUrls.size());
 }
 
 void blRATFramesLoader::setTracks(std::vector<blRATTrack*> tracks){
@@ -54,7 +54,7 @@ void blRATFramesLoader::saveTimeTracksRepresentation(std::string dirURL){
 
         // get a random color for each track
         vector<vector<int> > randColors;
-        for (unsigned int l = 0 ; l < m_tracks.size() ; ++l){
+        for (unsigned l = 0 ; l < m_tracks.size() ; ++l){
             vector<int> randColor = blColor::GetRandRGB();
             randColors.push_back(randColor);
         }
@@ -65,14 +65,14 @@ void blRATFramesLoader::saveTimeTracksRepresentation(std::string dirURL){
             FloatColor2DImage::Pointer resImage = this->getIndividualRepresentationImage(imageType, nl, nc, f);
 
             // Plot the connexions on top of each projected frames
-            for (unsigned int l = 0 ; l < m_tracks.size() ; ++l){
+            for (unsigned l = 0 ; l < m_tracks.size() ; ++l){
 
                 // get a color
                 vector<int> randColor = randColors[l];
                 pixel2d[0] = randColor[0]; pixel2d[1] = randColor[1]; pixel2d[2] = randColor[2];
 
                 // plot the link on each frames
-                for (unsigned int st = 1 ; st < m_tracks.at(l)->getTrackSize() ; ++st){
+                for (unsigned st = 1 ; st < m_tracks.at(l)->getTrackSize() ; ++st){
                     blRATState* stateBefore = m_tracks.at(l-1)->getStateAt(st);
                     blRATState* stateCurent = m_tracks.at(l)->getStateAt(st);
                     int xStart = stateBefore->getStateAt(0);
@@ -85,7 +85,7 @@ void blRATFramesLoader::saveTimeTracksRepresentation(std::string dirURL){
                     vector<int> px, py;
                     blMathGeometry::Calculate2DLineCoordinates(xStart,yStart,xEnd,yEnd, px, py);
                     if (f >= trackFrameIdx){
-                        for (unsigned int i=0 ; i<px.size() ; ++i){
+                        for (unsigned i=0 ; i<px.size() ; ++i){
                             index2d[0]=px[i]; index2d[1]=py[i];
                             resImage->SetPixel(index2d, pixel2d);
                         }
