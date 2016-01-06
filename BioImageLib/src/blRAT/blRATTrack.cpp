@@ -41,7 +41,7 @@ blRATState* blRATTrack::getStateAtFrame(int frameIdx){
             return m_states[i];
         }
     }
-    return NULL;
+    return 0;
 }
 
 unsigned int blRATTrack::getTrackSize(){
