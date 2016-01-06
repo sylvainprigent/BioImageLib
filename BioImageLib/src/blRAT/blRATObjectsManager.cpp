@@ -57,7 +57,7 @@ void blRATObjectsManager::loadFrameStates(std::string fileURL){
                     blCast::from_string(readedword, val);
                     states.push_back(float(val));
                 }
-                m_stateLength = unsigned int(states.size());
+                m_stateLength = unsigned(states.size());
                 blRATState * st = new blRATState(states);
                 shapes.push_back(st);
             }
