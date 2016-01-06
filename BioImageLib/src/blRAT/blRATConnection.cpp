@@ -7,8 +7,8 @@
 #include "blRATConnection.h"
 
 blRATConnection::blRATConnection(){
-    m_startState = NULL;
-    m_endState = NULL;
+    m_startState = 0;
+    m_endState = 0;
     m_startFrameIdx = -1;
     m_endFrameIdx = -1;
     m_energy = -1;

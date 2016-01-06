@@ -9,6 +9,7 @@
 #include "blRATState.h"
 #include "blRATExport.h"
 
+
 /// \class blRATConnection
 /// \brief Class allowing to store an object state for RAT tracking
 class BLRAT_EXPORT blRATConnection
