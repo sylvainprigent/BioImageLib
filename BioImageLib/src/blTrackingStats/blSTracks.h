@@ -10,6 +10,7 @@
 
 #include "blTrackingStatsExport.h"
 #include "blStatistics/blDistributionInfo.h"
+#include <string>
 
 /// \class blSTracks
 /// \brief Class containing a group of blSTrack

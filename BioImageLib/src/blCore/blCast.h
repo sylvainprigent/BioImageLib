@@ -33,8 +33,8 @@ public:
         //// créer un flux à partir de la chaîne donnée
         istringstream iss( Str );
         //// tenter la conversion vers Dest
-        return iss >> Dest != 0;
-        //return false;
+        iss >> Dest;
+        return true;
     }
 };
 

@@ -5,6 +5,7 @@
 /// \date 2015
 
 #include "blSTrack.h"
+#include <math.h>
 
 blSTrack::blSTrack(){
 

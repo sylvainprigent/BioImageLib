@@ -15,6 +15,7 @@ option(bl_BUILD_MPP "Build mpp" false)
 option(bl_BUILD_RAT "Build blRAT" true)
 option(bl_BUILD_AT "Build association tracking" false)
 option(bl_BUILD_PARTICLE_FILTERING "Build particle filtering" true)
+option(bl_BUILD_RAT "Build recursive association tracking" false)
 
 ## #################################################################
 ## Add subdirectory
@@ -59,7 +60,9 @@ if(bl_HAVE_LEMON)
 endif(bl_HAVE_LEMON)
 endif(bl_BUILD_AT)
 
+
 # Add particle filtering
 if(bl_BUILD_PARTICLE_FILTERING)
 add_subdirectory( blParticleFiltering )
 endif()
+

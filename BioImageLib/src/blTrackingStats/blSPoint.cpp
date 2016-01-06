@@ -5,6 +5,7 @@
 /// \date 2015
 
 #include "blSPoint.h"
+#include <math.h>
 
 blSPoint::blSPoint(int frameIdx, float x, float y){
     m_x = x;

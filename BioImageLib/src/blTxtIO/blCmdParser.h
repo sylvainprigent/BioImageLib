@@ -28,7 +28,7 @@ public:
     blProcessParameters* parse(int minArgc = 0);
 
 private:
-    int blCmdParser::parseArg(std::string arg, blProcessParameters* parameters, int i);
+    int parseArg(std::string arg, blProcessParameters* parameters, int i);
 
 private:
     int m_argc;

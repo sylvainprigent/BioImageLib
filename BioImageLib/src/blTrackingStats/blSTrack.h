@@ -19,7 +19,7 @@ public:
     /// \brief blSTrack Constructor
     blSTrack();
 
-    blSTrack::blSTrack(std::vector<blSPoint*> points);
+    blSTrack(std::vector<blSPoint*> points);
 
 public:
     // setters

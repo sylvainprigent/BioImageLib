@@ -35,11 +35,11 @@ if(bl_BUILD_RAT)
 if(bl_HAVE_LEMON)
   add_subdirectory( blRAT )
 endif(bl_HAVE_LEMON)
-endif()
+endif(bl_BUILD_RAT)
 
 # Add particle filtering
 if(bl_BUILD_PARTICLE_FILTERING)
 add_subdirectory( blParticleFiltering )
-endif()
+endif(bl_BUILD_PARTICLE_FILTERING)
 
 add_subdirectory( blFishScript )

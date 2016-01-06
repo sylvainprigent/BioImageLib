@@ -109,7 +109,6 @@ vector<vector<float> > blTxtIO::LoadShapeFromTxtFile(string filePath){
                 stringstream stream(curentLine);
                 //std::cout << "readed line = " << curentLine << std::endl;
                 while( getline(stream, readedword, '\t')){
-                    //std::cout << "readed word = " << readedword << std::endl;
                     val = std::stod(readedword);
                     //blCast::from_string(readedword, val);
                     Shape.push_back(val);
