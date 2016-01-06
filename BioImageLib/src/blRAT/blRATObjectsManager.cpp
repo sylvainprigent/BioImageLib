@@ -52,8 +52,8 @@ void blRATObjectsManager::loadFrameStates(std::string fileURL){
                 //std::cout << "readed line = " << curentLine << std::endl;
                 while( getline(stream, readedword, '\t')){
                     //std::cout << "readed word = " << readedword << std::endl;
-                    val = std::stod(readedword);
-                    //blCast::from_string(readedword, val);
+                    //val = std::stod(readedword);
+                    blCast::from_string(readedword, val);
                     states.push_back(float(val));
                 }
                 m_stateLength = unsigned int(states.size());
