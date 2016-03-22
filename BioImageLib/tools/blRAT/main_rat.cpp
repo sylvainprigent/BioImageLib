@@ -69,12 +69,16 @@ int main(int argc, char* argv[] ){
     while ( (dirDetections = readdir(dpDetection)) ) {
         if( !(string(dirDetections->d_name) == ".") && !(string(dirDetections->d_name) == "..")){
             if(std::string::npos != string(dirDetections->d_name).find(".txt")){
-                inputDetectionsFilesPaths.push_back(dirDetections->d_name);
+                inputDetectionsFilesPaths.push_back(detectionsFolder + dirDetections->d_name);
             }
         }
     }
     closedir(dpDetection);
     std::sort( inputDetectionsFilesPaths.begin(), inputDetectionsFilesPaths.end() );
+
+    //for(int i = 0 ; i < inputDetectionsFilesPaths.size() ; i++){
+    //    cout << "inputDetectionsFile:" << inputDetectionsFilesPaths[i] << endl;
+    //}
 
     if (inputDetectionsFilesPaths.size() != inputImagesPaths.size()){
         cout << "Error: They must be the same number of detections files and frames files" << detectionsFolder << endl;
@@ -91,10 +95,12 @@ int main(int argc, char* argv[] ){
         paramManager->load();
 
         // initialize the objects manager
+        cout << "initialize the objects manager" << endl;
         blRATObjectsManager* objectsManager = new blRATObjectsManager;
         objectsManager->loadFramesStates(inputDetectionsFilesPaths);
 
         // initialize the cost manager
+        cout << "initialize the cost manager" << endl;
         blRATCostManager *costManager = new blRATCostManager(objectsManager);
         blRATFactories factory(paramManager);
         std::vector<std::string> defaultCostList;
@@ -110,15 +116,23 @@ int main(int argc, char* argv[] ){
         costManager->initialize();
 
         // initialize the tracker
+        cout << "initialize the tracker" << endl;
         blRATTracker* tracker = new blRATTracker(costManager, inputImagesPaths.size(), objectsManager);
         blProcessObserverCommandeLine* observer = new blProcessObserverCommandeLine;
         tracker->addObserver(observer);
+
+        tracker->setMaxMove(paramManager->getValueOfKey<float>("blRATTrackerMaxMove", 10));
+        tracker->setIntegerCoeff(1000);
+        tracker->setIterationsVerboseRatio(100);
         tracker->initialize();
+        cout << "tracker->run()" << endl;
         tracker->run();
+        cout << "tracker->saveTracksToTxtFile();" << endl;
         tracker->saveTracksToTxtFile(outputImageName + "tracks.txt");
         std::vector<blRATTrack*> tracks = tracker->getTracks();
 
         // frames loader
+        cout << "frames loader" << endl;
         blRATFramesLoader* frameLoader = new blRATFramesLoader;
         frameLoader->setFramesUrls(inputImagesPaths);
         frameLoader->setTracks(tracks);

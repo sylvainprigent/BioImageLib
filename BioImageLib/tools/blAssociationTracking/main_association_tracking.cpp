@@ -97,6 +97,10 @@ int main(int argc, char* argv[] ){
         cout << "inputImagesPaths:" << inputImagesPaths.size() << " files" << endl;
     }
 
+    for(int f = 0 ; f < inputDetectionsFilesPaths.size() ; ++f){
+        cout << inputDetectionsFilesPaths[f] << endl;
+    }
+
     // Get the selected images
     vector<string> framesInter;
     vector<string> detectionsInter;
@@ -161,7 +165,8 @@ int main(int argc, char* argv[] ){
 
         // Save the result
         tracker->saveTracksToTxtFile(outputImageName + "tracks.txt");
-        tracker->saveTimeTracksRepresentationFullIndividual(outputImageName);
+        tracker->saveTracksToTxtFile2(outputImageName + "tracks2.txt");
+        //tracker->saveTimeTracksRepresentationFullIndividual(outputImageName);
 
         vector<blAtTrack*> tracks = tracker->output();
         cout << "number of tracks = " << tracks.size() << endl;

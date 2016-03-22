@@ -521,13 +521,18 @@ void blAtTrackerInterface::saveTimeTracksRepresentationFullIndividual(string roo
                     if (f >= frameIdx){
                         for (unsigned int i=0 ; i<px.size() ; ++i){
                             index2d[0]=px[i]; index2d[1]=py[i];
-                            resImage->SetPixel(index2d, pixel2d);
+
+                            if (index2d[0] >= 0 && index2d[0] < nl && index2d[1] >= 0 && index2d[1] < nc){
+                                resImage->SetPixel(index2d, pixel2d);
+                            }
                         }
                     }
 
                     if (conn == 0 && connectionInter->startFrameIdx() == f){
                         index2d[0]=xStart; index2d[1]=yStart;
-                        resImage->SetPixel(index2d, pixel2d);
+                        if (index2d[0] >= 0 && index2d[0] < nl && index2d[1] >= 0 && index2d[1] < nc){
+                            resImage->SetPixel(index2d, pixel2d);
+                        }
                     }
                 }
             }
@@ -957,6 +962,49 @@ void blAtTrackerInterface::saveTracksToTxtFile(string fileName){
                     file << stateEnd.at(s) << "\t";
                 }
                 file << frameIdx << endl;
+            }
+        }
+        file.close();
+    }
+    else{
+        cerr << "Impossible to open the file !" << fileName << endl;
+    }
+}
+
+void blAtTrackerInterface::saveTracksToTxtFile2(string fileName){
+
+    // 1- Open file
+    ofstream file(fileName.c_str(), ios::out | ios::trunc);
+    if(file)
+    {
+
+        file << "fileName\tObject #\tFrame #\tX\tY" << endl;
+        // 2- Save each track
+        for (unsigned int i = 0 ; i < m_tracks.size() ; ++i){
+            //file << "track " << i << endl;
+            for (unsigned int conn = 0 ; conn < m_tracks[i]->getTrackSize() ; ++conn ){
+                blAtConnection* connectionInter = m_tracks.at(i)->getConnectionAt(conn);
+                if (conn == 0){
+
+                    file << "\t" << i+1 << "\t";
+
+                    vector<float> stateStart = connectionInter->stateStart();
+                    int frameIdx = connectionInter->startFrameIdx();
+                    file << frameIdx+1 << "\t";
+                    for (unsigned int s = 0 ; s < stateStart.size() ; ++s){
+                        file << stateStart.at(s) << "\t";
+                    }
+                    file << endl;
+                }
+
+                file << "\t" << i+1 << "\t";
+                vector<float> stateEnd =  connectionInter->stateEnd();
+                int frameIdx = connectionInter->endFrameIdx();
+                file << frameIdx+1 << "\t";
+                for (unsigned int s = 0 ; s < stateEnd.size() ; ++s){
+                    file << stateEnd.at(s) << "\t";
+                }
+                file << endl;
             }
         }
         file.close();

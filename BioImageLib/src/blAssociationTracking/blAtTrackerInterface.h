@@ -120,6 +120,11 @@ public:
     /// \param[in] fileName Name of the txt file. (full path)
     void saveTracksToTxtFile(std::string fileName);
 
+    /// \fn void saveTracksToTxtFile();
+    /// \brief saveTracksToTxtFile save the tracks into a txt file with the track index at each line.
+    /// \param[in] fileName Name of the txt file. (full path)
+    void saveTracksToTxtFile2(string fileName);
+
     /// \fn void loadTracksFromTxtFile(std::string fileName);
     /// \brief loadTracksFromTxtFile Load the tracks from a txt file.
     /// Each track in the file should be a list objects states followed by the frame index.

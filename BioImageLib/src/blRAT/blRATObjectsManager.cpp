@@ -68,6 +68,7 @@ void blRATObjectsManager::loadFrameStates(std::string fileURL){
         cerr << "blRATObjectsManager -> Impossible to open the file " << fileURL << "!" << endl;
     }
 
+    std::cout << "number of shapes in the frame = " << shapes.size() << std::endl;
     m_states.push_back(shapes);
 }
 

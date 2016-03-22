@@ -52,9 +52,11 @@ void blRATTracker::run(){
 
     for(int frame = 1 ; frame < m_framesNumber ; ++frame){
 
+        cout << "process frame " << frame << endl;
         // get the optimal set of connections for the curent frame
         oneStep(frame);
 
+        cout << "addConnectionsToTracks " << frame << endl;
         // copy the selected connections to the tracks list
         this->addConnectionsToTracks(m_config, frame);
     }
@@ -124,6 +126,7 @@ blRATTrack* blRATTracker::findAssociatedTrack(blRATConnection* newConnection){
 
 void blRATTracker::oneStep(unsigned int frameIdx){
 
+    //cout << "oneStep begin" << endl;
     this->findAllPossibleConnections(frameIdx);
 
     unsigned int maxIter = 1000;
@@ -134,13 +137,17 @@ void blRATTracker::oneStep(unsigned int frameIdx){
         this->cut(iter, maxIter);
     }
     this->addConnectionsToTracks(m_config, frameIdx);
+    //cout << "oneStep end" << endl;
 }
 
 void blRATTracker::findAllPossibleConnections(unsigned int frameIdx){
 
+    //cout << "findAllPossibleConnections begin" << endl;
     m_candidatedConnections.clear();
     std::vector<blRATState*> objectsPrevious = m_objectsManager->getObjectsAt(frameIdx-1);
     std::vector<blRATState*> objects = m_objectsManager->getObjectsAt(frameIdx);
+    //std::cout << "objects numbers previous " << objectsPrevious.size() << std::endl;
+    //std::cout << "objects numbers this " << objects.size() << std::endl;
     float xp, yp, x, y, euclidean;
     for(int op = 0 ; op < objectsPrevious.size() ; ++op){
         xp = objectsPrevious[op]->getStateAt(0);
@@ -160,6 +167,7 @@ void blRATTracker::findAllPossibleConnections(unsigned int frameIdx){
             }
         }
     }
+    //cout << "findAllPossibleConnections end" << endl;
 }
 
 bool blRATTracker::isConflict(blRATConnection* conn1, blRATConnection* conn2){
@@ -194,10 +202,13 @@ void blRATTracker::generateNewRandConfiguration(unsigned int nbConnections){
     while (k < nbConnections && n<n_max){
         //1- Generate rand shape
         //std::cout << "1- Generate rand shape" << std::endl;
+        //std::cout << "m_candidatedConnections.size()=" << m_candidatedConnections.size() << std::endl;
         int randPos = int(blRandomGeneratorPM::rand()*float(m_candidatedConnections.size()));
+        //std::cout << "1- Generate rand shape rand pos = " << randPos << std::endl;
         blRATConnection* newConnection = m_candidatedConnections[randPos];
 
         // 2- Calculate data term
+        //std::cout << "2- Calculate data term" << std::endl;
         energy = newConnection->energy();
 
         //std::cout << std::endl << "2- Calculate data term done" << std::endl;
