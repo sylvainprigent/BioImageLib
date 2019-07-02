@@ -14,6 +14,7 @@
 
 # Add tools
 add_subdirectory( blFiltering )
+add_subdirectory( blStatistics )
 
 # Add blMpp
 if(bl_BUILD_MPP)
@@ -42,4 +43,8 @@ if(bl_BUILD_PARTICLE_FILTERING)
 add_subdirectory( blParticleFiltering )
 endif(bl_BUILD_PARTICLE_FILTERING)
 
+if(bl_BUILD_AT)
+if(bl_HAVE_LEMON)
 add_subdirectory( blFishScript )
+endif(bl_HAVE_LEMON)
+endif()

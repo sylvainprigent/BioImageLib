@@ -33,7 +33,7 @@ SET(SRC_FILES
 SET(NAME blMppLibraryGenerator)
 SET(FILE ${SRC_FILES} ${MOC_OUTFILES} main.cpp )
 add_executable( ${NAME} ${FILE} )
-target_link_libraries(${NAME} blMpp ${ITK_LIBRARIES} Qt5::Widgets blCore)
+target_link_libraries(${NAME} blMpp ${ITK_LIBRARIES} Qt5::Widgets blCore blMpp)
 
 
 

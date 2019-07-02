@@ -21,9 +21,9 @@ set(${PROJECT_NAME}_VERSION_BUILD 1 CACHE STRING "bl build version number." FORC
 set(${PROJECT_NAME}_VERSION
   "${${PROJECT_NAME}_VERSION_MAJOR}.${${PROJECT_NAME}_VERSION_MINOR}.${${PROJECT_NAME}_VERSION_BUILD}")
 
-mark_as_advanced(${PROJECT_NAME}_VERSION_MAJOR)
-mark_as_advanced(${PROJECT_NAME}_VERSION_MINOR)
-mark_as_advanced(${PROJECT_NAME}_VERSION_BUILD)
+#mark_as_advanced(${PROJECT_NAME}_VERSION_MAJOR)
+#mark_as_advanced(${PROJECT_NAME}_VERSION_MINOR)
+#mark_as_advanced(${PROJECT_NAME}_VERSION_BUILD)
 
 ## #################################################################
 ## Config file

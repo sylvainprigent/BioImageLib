@@ -33,6 +33,7 @@ add_library(${PROJECT_NAME} ${SRC_FILES} ${HEADERS_FILES})
 
 target_link_libraries(${PROJECT_NAME}  
 	blCore 
+	blStatistics
 	)
 
 ## #################################################################

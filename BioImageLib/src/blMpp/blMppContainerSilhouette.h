@@ -110,7 +110,7 @@ protected:
 // /////////////////////////////////////////////// //
 /// \class blMppContainerSilhouetteLine
 /// \brief Define a container of a single line of a silhouette
-class blMppContainerSilhouetteLine{
+class BLMPP_EXPORT blMppContainerSilhouetteLine{
 
 public:
     /// \fn blMppContainerSilhouetteLine();

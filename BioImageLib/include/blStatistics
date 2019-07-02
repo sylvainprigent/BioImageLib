@@ -1,0 +1,3 @@
+#include "../src/blStatistics/blDistributionInfo.h"
+#include "../src/blStatistics/blTtest.h"
+#include "../src/blStatistics/blWilcoxonTest.h"

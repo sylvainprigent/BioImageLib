@@ -17,6 +17,7 @@ project(blTxtIO)
 ## #################################################################
 SET(HEADERS_FILES 
   blCmdParser.h
+  blCsvIO.h
   blProcessParameters.h
   blTxtIO.h
 )
@@ -26,6 +27,7 @@ SET(TEMPLATES_FILES
 
 SET(SRCS_FILES
   blCmdParser.cpp
+  blCsvIO.cpp
   blProcessParameters.cpp
   blTxtIO.cpp
  )

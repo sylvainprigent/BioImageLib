@@ -19,6 +19,7 @@ enable_testing()
 add_subdirectory(blCore)
 add_subdirectory( blFiltering )
 add_subdirectory( blGeometry )
+add_subdirectory( blStatistics )
 
 if(bl_BUILD_MPP)
 if(bl_HAVE_LEMON)

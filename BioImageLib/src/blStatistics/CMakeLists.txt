@@ -16,10 +16,14 @@ project(blStatistics)
 ## #################################################################
 SET(SRC_FILES
     blDistributionInfo.cpp
+    blTtest.cpp
+    blWilcoxonTest.cpp
    )
 
 SET(HEADERS_FILES
     blDistributionInfo.h
+    blTtest.h
+    blWilcoxonTest.h
    )
 
 ## #################################################################
