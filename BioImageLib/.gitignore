@@ -2,6 +2,9 @@ build/*
 ./Doc/html/*
 ./Doc/*
 ./Doc/Doxyfile
+./doc/html/*
+./doc/*
+./doc/Doxyfile
 *~
 .DS_Store
 ../.DS_Store
