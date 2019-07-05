@@ -1,7 +1,7 @@
 build/*
-Doc/html/*
-Doc/*
-Doc/Doxyfile
+./Doc/html/*
+./Doc/*
+./Doc/Doxyfile
 *~
 .DS_Store
 ../.DS_Store
