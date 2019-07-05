@@ -9,15 +9,17 @@ int main(int argc, char* argv[])
     std::string grayImageFile(BLORCHIDEIMAGE);// = "../../tests/blTestData/orchide.tif";
     blImage* imageGray = new blImage(grayImageFile);
 
-    blBilateralFilter filterGray;
-    filterGray.setInput(imageGray);
-    filterGray.setDomainSigma(4.0);
-    filterGray.setRangeSigma(10.0);
-    filterGray.run();
-    blImage* filteredImageGray = filterGray.output();
-    //filteredImageGray->save(std::string(BLORCHIDEIMAGEBILATERAL);
+    blBilateralFilter* filterGray = new blBilateralFilter();
+    filterGray->setInput(imageGray);
+    filterGray->setDomainSigma(4.0);
+    filterGray->setRangeSigma(10.0);
+    filterGray->run();
+    blImage* filteredImageGray = filterGray->output();
+    //filteredImageGray->save(std::string(BLORCHIDEIMAGEBILATERAL)+"_test.tif");
+
 
     std::string refBilateralGrayImageFile(BLORCHIDEIMAGEBILATERAL);// = "../../tests/blTestData/orchideBilateral.tif";
+    std::cout << "output image = " << refBilateralGrayImageFile;
     blImage* refBilateralGrayImage = new blImage(refBilateralGrayImageFile);
     blComparisonImageFilter comparisonDiffGray;
     comparisonDiffGray.setReferenceImage(refBilateralGrayImage);

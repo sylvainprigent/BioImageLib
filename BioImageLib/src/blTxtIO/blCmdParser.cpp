@@ -41,6 +41,34 @@ blProcessParameters* blCmdParser::parse(int minArgc){
     return parameters;
 }
 
+blProcessParameters* blCmdParser::pairParse(){
+
+    blProcessParameters* parameters = new blProcessParameters;
+
+    std::cout << "argc=" << m_argc << std::endl;
+    int i = 1;
+    while (i < m_argc) {
+        std::string arg = m_argv[i];
+        std::cout << "parse arg=" << arg << std::endl;
+        // help
+        if (arg == "-h") {
+            throw blException(m_usage.c_str());
+        }
+
+        // arg
+        i++;
+        if (i < m_argc) {
+            parameters->setValueOfKey(arg, m_argv[i]);
+            i++;
+        }
+        else if ( i > m_argc ){
+            std::cerr << arg + " option requires one argument." << std::endl;
+        }
+
+    }
+    return parameters;
+}
+
 int blCmdParser::parseArg(std::string arg, blProcessParameters* parameters, int i){
     if (i + 1 < m_argc) {
         i++;

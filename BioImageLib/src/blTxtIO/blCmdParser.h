@@ -26,6 +26,7 @@ public:
 
     // outputs
     blProcessParameters* parse(int minArgc = 0);
+    blProcessParameters* pairParse();
 
 private:
     int parseArg(std::string arg, blProcessParameters* parameters, int i);

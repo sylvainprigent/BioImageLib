@@ -19,17 +19,17 @@ HIDE_UNDOC_MEMBERS     = NO
 HIDE_UNDOC_CLASSES     = NO
 
 # PATHS OUT AND IN
-OUTPUT_DIRECTORY = /Users/sprigent/Documents/code/BioImageLib/BioImageLib/doc
-STRIP_FROM_PATH = /Users/sprigent/Documents/code/BioImageLib/BioImageLib/src/
-INPUT = /Users/sprigent/Documents/code/BioImageLib/BioImageLib/src
+OUTPUT_DIRECTORY = /home/sprigent/Dev/BioImageLib/BioImageLib/doc
+STRIP_FROM_PATH = /home/sprigent/Dev/BioImageLib/BioImageLib/src/
+INPUT = /home/sprigent/Dev/BioImageLib/BioImageLib/src
 RECURSIVE = YES
 EXCLUDE_PATTERNS = */external/*
-IMAGE_PATH     = /Users/sprigent/Documents/code/BioImageLib/BioImageLib/doc/images/
+IMAGE_PATH     = /home/sprigent/Dev/BioImageLib/BioImageLib/doc/images/
 
 
 # DIAGRAMS GENERATION with "Dot"
-MSCGEN_PATH = 
-DOT_PATH = 
+MSCGEN_PATH = /usr/bin
+DOT_PATH = /usr/bin
 
 GENERATE_LATEX         = NO
 IGNORE_PREFIX          = bl
