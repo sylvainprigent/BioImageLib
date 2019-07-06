@@ -8,7 +8,7 @@
 #include <blCastStacks>
 
 blMeanFilter::blMeanFilter() : blFilter(){
-
+    m_radius = 5;
 }
 
 blMeanFilter::~blMeanFilter(){
@@ -25,7 +25,6 @@ void blMeanFilter::setRadius(int radius){
 
 void blMeanFilter::run(){
     if (m_inputImage->imageType() == blImage::TypeInt2D){
-
         m_outputImage = meanFilter<Int2DImage>(m_inputImage->itkInt2DImagePointer());
     }
     else if(m_inputImage->imageType() == blImage::TypeFloat2D){

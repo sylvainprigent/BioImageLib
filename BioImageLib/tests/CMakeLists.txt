@@ -21,8 +21,10 @@ add_subdirectory( blFiltering )
 add_subdirectory( blGeometry )
 add_subdirectory( blStatistics )
 
-if(bl_BUILD_MPP)
-if(bl_HAVE_LEMON)
-  add_subdirectory( blMpp )
-endif(bl_HAVE_LEMON)
-endif()
+## blMpp test are rand dependent: a rand generator from file values list must
+## be created to run test
+#if(bl_BUILD_MPP)
+#if(bl_HAVE_LEMON)
+#  add_subdirectory( blMpp )
+#endif(bl_HAVE_LEMON)
+#endif()

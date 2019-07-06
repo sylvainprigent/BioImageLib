@@ -13,7 +13,10 @@ blBilateralFilter::blBilateralFilter() : blFilter(){
 }
 
 blBilateralFilter::~blBilateralFilter(){
-
+    std::cout << "bilateral destructor" << std::endl;
+    m_inputImage = nullptr;
+    m_outputImage = nullptr;
+    std::cout << "bilateral destructor end" << std::endl;
 }
 
 std::string blBilateralFilter::name(){

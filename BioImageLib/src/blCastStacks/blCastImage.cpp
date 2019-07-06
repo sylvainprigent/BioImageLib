@@ -8,8 +8,8 @@
 
 
 blCastImage::blCastImage() : blProcess(){
-    m_inputImage = NULL;
-    m_outputImage = NULL;
+    m_inputImage = nullptr;
+    m_outputImage = nullptr;
 }
 
 blCastImage::~blCastImage(){

@@ -19,19 +19,19 @@ enable_testing()
 ## #################################################################
 
 set(${PROJECT_NAME}_MAIN_SOURCES
-  blBilateralFilter.cpp
-  blBinomialBlurFilter.cpp
-  blConvolutionFilter.cpp
-  blCurvatureFlowFilter.cpp
-  blDiscreteGaussianFilter.cpp
+  blBilateralFilterTest.cpp
+  blBinomialBlurFilterTest.cpp
+  blConvolutionFilterTest.cpp
+  blCurvatureFlowFilterTest.cpp
+  blDiscreteGaussianFilterTest.cpp
 #  blFrangiFilter.cpp
-  blKernelConvolution.cpp
+  blKernelConvolutionTest.cpp
   blMeanFilterTest.cpp
   blMedianFilterTest.cpp
-  blMinMaxCurvatureFlowFilter.cpp
-  blRecursiveGaussianFilter.cpp
-  blVectorCurvatureAnisotropicDiffusionFilter.cpp
-  blVectorGradientAnisotropicDiffusionFilter.cpp
+  blMinMaxCurvatureFlowFilterTest.cpp
+  blRecursiveGaussianFilterTest.cpp
+  blVectorCurvatureAnisotropicDiffusionFilterTest.cpp
+  blVectorGradientAnisotropicDiffusionFilterTest.cpp
   )
 
 ## ###################################################################

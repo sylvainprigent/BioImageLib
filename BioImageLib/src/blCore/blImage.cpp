@@ -27,14 +27,14 @@ const std::string blImage::TypeFloatVector2D = "FloatVector2DImage";
 
 // Constructors
 void blImage::initPointers(){
-    m_itkInt2DImage = NULL;
-    m_itkFloat2DImage = NULL;
-    m_itkInt3DImage = NULL;
-    m_itkFloat3DImage = NULL;
-    m_itkIntColor2DImage = NULL;
-    m_itkFloatColor2DImage = NULL;
-    m_itkIntColor3DImage = NULL;
-    m_itkFloatColor3DImage = NULL;
+    m_itkInt2DImage = nullptr;
+    m_itkFloat2DImage = nullptr;
+    m_itkInt3DImage = nullptr;
+    m_itkFloat3DImage = nullptr;
+    m_itkIntColor2DImage = nullptr;
+    m_itkFloatColor2DImage = nullptr;
+    m_itkIntColor3DImage = nullptr;
+    m_itkFloatColor3DImage = nullptr;
 }
 
 blImage::blImage() : blData(){

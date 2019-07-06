@@ -11,6 +11,7 @@ int main(int argc, char* argv[])
 
     blMeanFilter filterGray;
     filterGray.setInput(imageGray);
+    filterGray.setRadius(5);
     filterGray.run();
     blImage* filteredImageGray = filterGray.output();
     //filteredImageGray->save("../../tests/blTestData/orchideMean.tif");
@@ -24,6 +25,7 @@ int main(int argc, char* argv[])
     comparisonDiffGray.setToleranceRadius( 0 );
     comparisonDiffGray.run();
     unsigned long testGrayEqualDiff = comparisonDiffGray.numberOfPixelsWithDifferences();
+    //std::cout << "gray diff = " << testGrayEqualDiff << std::endl;
     if (testGrayEqualDiff > 0){
         return 1;
     }
@@ -35,6 +37,7 @@ int main(int argc, char* argv[])
 
     blMeanFilter filterColor;
     filterColor.setInput(imagecolor);
+    filterColor.setRadius(5);
     filterColor.run();
     blImage* filteredImageColor = filterColor.output();
     //filteredImageColor->save("../../tests/blTestData/orchideMeanColor.tif");
@@ -48,6 +51,7 @@ int main(int argc, char* argv[])
     comparisonDiffColor.setToleranceRadius( 0 );
     comparisonDiffColor.run();
     unsigned long testColorEqualDiff = comparisonDiffColor.numberOfPixelsWithDifferences();
+    //std::cout << "color diff = " << testColorEqualDiff << std::endl;
     if (testColorEqualDiff > 0){
         return 1;
     }

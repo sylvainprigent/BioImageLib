@@ -23,3 +23,6 @@ target_link_libraries(blMeanFilter blTxtIO blCastStacks blFiltering ${ITK_LIBRAR
 
 add_executable( blGaussianFilter blGaussianFilter.cpp )
 target_link_libraries(blGaussianFilter blTxtIO blCastStacks blFiltering ${ITK_LIBRARIES} blCore)
+
+add_executable( blBilateralFilter blBilateralFilter.cpp )
+target_link_libraries(blBilateralFilter blTxtIO blCastStacks blFiltering ${ITK_LIBRARIES} blCore)

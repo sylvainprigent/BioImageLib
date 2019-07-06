@@ -5,13 +5,13 @@
 /// \date 2014
 
 #include "blProcess.h"
+#include <iostream>
 
 blProcess::blProcess(){
 
 }
 
 blProcess::~blProcess(){
-
 }
 
 std::string blProcess::name(){

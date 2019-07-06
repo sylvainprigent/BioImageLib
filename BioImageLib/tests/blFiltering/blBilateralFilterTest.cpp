@@ -36,13 +36,15 @@ int main(int argc, char* argv[])
     std::string colorImageFile(BLORCHIDECOLORIMAGE);// = "../../tests/blTestData/orchideColor.tif";
     blImage* imagecolor = new blImage(colorImageFile);
 
+
     blBilateralFilter filterColor;
     filterColor.setInput(imagecolor);
     filterColor.setDomainSigma(4.0);
     filterColor.setRangeSigma(10.0);
     filterColor.run();
     blImage* filteredImageColor = filterColor.output();
-    //filteredImageColor->save("../../tests/blTestData/orchideBilateralColor.tif");
+    //filteredImageColor->save("../../tests/blTestData/orchideBilateralColor_test.tif");
+
 
     std::string refBilateralColorImageFile(BLORCHIDECOLORIMAGEBILATERAL);// = "../../tests/blTestData/orchideBilateralColor.tif";
     blImage* refBilateralColorImage = new blImage(refBilateralColorImageFile);

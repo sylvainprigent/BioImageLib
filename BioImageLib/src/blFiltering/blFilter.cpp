@@ -7,12 +7,11 @@
 #include "blFilter.h"
 
 blFilter::blFilter() : blProcess(){
-    m_inputImage = NULL;
-    m_outputImage = NULL;
+    m_inputImage = nullptr;
+    m_outputImage = nullptr;
 }
 
 blFilter::~blFilter(){
-
 }
 
 std::string blFilter::name(){
