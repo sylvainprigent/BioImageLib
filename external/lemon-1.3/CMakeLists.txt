@@ -299,11 +299,11 @@ ENDIF()
 
 ADD_SUBDIRECTORY(lemon)
 IF(${CMAKE_SOURCE_DIR} STREQUAL ${PROJECT_SOURCE_DIR})
-  ADD_SUBDIRECTORY(contrib)
-  ADD_SUBDIRECTORY(demo)
-  ADD_SUBDIRECTORY(tools)
+  #ADD_SUBDIRECTORY(contrib)
+  #ADD_SUBDIRECTORY(demo)
+  #ADD_SUBDIRECTORY(tools)
   #ADD_SUBDIRECTORY(doc)
-  ADD_SUBDIRECTORY(test)
+  #ADD_SUBDIRECTORY(test)
 ENDIF()
 
 ## #################################################################

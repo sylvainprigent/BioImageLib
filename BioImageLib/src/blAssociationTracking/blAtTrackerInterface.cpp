@@ -278,7 +278,7 @@ void blAtTrackerInterface::saveTimeTracksRepresentation(string rootFileName){
         blImageIO::saveFloatColor3DImage(rootFileName, resImage, true);
     }
     else{
-       FloatColor3DImage::IndexType index3d;
+        FloatColor3DImage::IndexType index3d;
         Float2DImage::IndexType index2d;
         FloatColor3DImage::PixelType pixel3d;
 
@@ -398,30 +398,30 @@ void blAtTrackerInterface::saveTimeTracksRepresentationOneFrame(string rootFileN
         FloatColor3DImage::Pointer resImage = blImageCreate::createNewFloatColor3DImage(nl, nc, m_framesFiles.size());
 
         // Copy input frames in a 3D image
-//        for (int i = 0 ; i < 1 ; ++i){
+        //        for (int i = 0 ; i < 1 ; ++i){
 
-//            if (i>0){
-//                image = blImageIO::LoadToFloat2DImage(m_framesFiles.at(0));
-//                // normalize intensity
-//                typedef itk::RescaleIntensityImageFilter< Float2DImage, Float2DImage > RescaleFilterType;
-//                RescaleFilterType::Pointer rescaleFilter = RescaleFilterType::New();
-//                rescaleFilter->SetInput(image);
-//                rescaleFilter->SetOutputMinimum(0);
-//                rescaleFilter->SetOutputMaximum(255);
-//                rescaleFilter->Update();
-//                image = rescaleFilter->GetOutput();
-//            }
-//            index3d[2] = i;
-//            for (int m = 0 ; m < nl ; ++m){
-//                for (int n = 0 ; n < nc ; ++n){
-//                    index3d[0] = m; index3d[1] = n;
-//                    index2d[0] = m; index2d[1] = n;
-//                    float value = image->GetPixel(index2d);
-//                    pixel3d[0] = value; pixel3d[1] = value; pixel3d[2] = value;
-//                    resImage->SetPixel(index3d, pixel3d);
-//                }
-//            }
-//        }
+        //            if (i>0){
+        //                image = blImageIO::LoadToFloat2DImage(m_framesFiles.at(0));
+        //                // normalize intensity
+        //                typedef itk::RescaleIntensityImageFilter< Float2DImage, Float2DImage > RescaleFilterType;
+        //                RescaleFilterType::Pointer rescaleFilter = RescaleFilterType::New();
+        //                rescaleFilter->SetInput(image);
+        //                rescaleFilter->SetOutputMinimum(0);
+        //                rescaleFilter->SetOutputMaximum(255);
+        //                rescaleFilter->Update();
+        //                image = rescaleFilter->GetOutput();
+        //            }
+        //            index3d[2] = i;
+        //            for (int m = 0 ; m < nl ; ++m){
+        //                for (int n = 0 ; n < nc ; ++n){
+        //                    index3d[0] = m; index3d[1] = n;
+        //                    index2d[0] = m; index2d[1] = n;
+        //                    float value = image->GetPixel(index2d);
+        //                    pixel3d[0] = value; pixel3d[1] = value; pixel3d[2] = value;
+        //                    resImage->SetPixel(index3d, pixel3d);
+        //                }
+        //            }
+        //        }
 
         // Plot the connexions on top of each projected frames
         for (unsigned int l = 0 ; l < m_tracks.size() ; ++l){
@@ -467,6 +467,80 @@ void blAtTrackerInterface::saveTimeTracksRepresentationOneFrame(string rootFileN
             }
         }
         blImageIO::saveFloatColor3DImage(rootFileName, resImage);
+    }
+}
+
+
+void blAtTrackerInterface::saveTimeTracksRepresentationIndividual(string rootFileName){
+
+    if (m_is3D){
+        // todo implement this
+    }
+    else{
+
+        Float2DImage::IndexType index2d;
+        FloatColor2DImage::PixelType pixel2d;
+
+        // Create the output image and copy the inputs
+        blImage* image = new blImage(m_framesFiles.at(0));
+        int nl = image->imageSize().xSize();
+        int nc = image->imageSize().ySize();
+        std::string imageType = image->imageType();
+        delete image;
+
+
+        // get a random color for each track
+        vector<vector<int> > randColors;
+        for (unsigned int l = 0 ; l < m_tracks.size() ; ++l){
+            vector<int> randColor = blColor::GetRandRGB();
+            randColors.push_back(randColor);
+        }
+
+
+        for (int f = 0 ; f < int(m_framesFiles.size()) ; ++f){
+
+            FloatColor2DImage::Pointer resImage = this->getIndividualRepresentationImage(imageType, nl, nc, f);
+
+            // Plot the connexions on top of each projected frames
+            for (unsigned int l = 0 ; l < m_tracks.size() ; ++l){
+
+                // get a color
+                vector<int> randColor = randColors[l];
+                pixel2d[0] = randColor[0]; pixel2d[1] = randColor[1]; pixel2d[2] = randColor[2];
+
+                // plot the link on each frames
+                for (unsigned int conn = 0 ; conn < m_tracks.at(l)->getTrackSize() ; ++conn){
+                    blAtConnection* connectionInter = m_tracks.at(l)->getConnectionAt(conn);
+                    int xStart = connectionInter->stateStart().at(0);
+                    int yStart = connectionInter->stateStart().at(1);
+                    int xEnd = connectionInter->stateEnd().at(0);
+                    int yEnd = connectionInter->stateEnd().at(1);
+
+                    vector<int> px, py;
+                    blMathGeometry::Calculate2DLineCoordinates(xStart,yStart,xEnd,yEnd, px, py);
+                    int frameIdx = connectionInter->endFrameIdx();
+                    if (frameIdx <= f && frameIdx >= f-10){
+                        for (unsigned int i=0 ; i<px.size() ; ++i){
+                            index2d[0]=px[i]; index2d[1]=py[i];
+
+                            if (index2d[0] >= 0 && index2d[0] < nl && index2d[1] >= 0 && index2d[1] < nc){
+                                resImage->SetPixel(index2d, pixel2d);
+                            }
+                        }
+                    }
+
+                    if (conn == 0 && connectionInter->startFrameIdx() == f){
+                        index2d[0]=xStart; index2d[1]=yStart;
+                        if (index2d[0] >= 0 && index2d[0] < nl && index2d[1] >= 0 && index2d[1] < nc){
+                            resImage->SetPixel(index2d, pixel2d);
+                        }
+                    }
+                }
+            }
+            string fileName = blStringOperations::getFileNameFromPath(m_framesFiles[f]);
+            blImageIO::saveFloatColor2DImage(rootFileName + fileName, resImage, true);
+        }
+
     }
 }
 
@@ -551,28 +625,28 @@ FloatColor2DImage::Pointer blAtTrackerInterface::getIndividualRepresentationImag
     // for gray scaled images
     FloatColor2DImage::Pointer resImage;
     if (imageType == blImage::TypeFloat2D || imageType == blImage::TypeInt2D){
-            Float2DImage::Pointer image = blImageIO::loadToFloat2DImage(m_framesFiles.at(i));
-            // normalize intensity
-            typedef itk::RescaleIntensityImageFilter< Float2DImage, Float2DImage > RescaleFilterType;
-            RescaleFilterType::Pointer rescaleFilter = RescaleFilterType::New();
-            rescaleFilter->SetInput(image);
-            rescaleFilter->SetOutputMinimum(0);
-            rescaleFilter->SetOutputMaximum(255);
-            rescaleFilter->Update();
-            image = rescaleFilter->GetOutput();
+        Float2DImage::Pointer image = blImageIO::loadToFloat2DImage(m_framesFiles.at(i));
+        // normalize intensity
+        typedef itk::RescaleIntensityImageFilter< Float2DImage, Float2DImage > RescaleFilterType;
+        RescaleFilterType::Pointer rescaleFilter = RescaleFilterType::New();
+        rescaleFilter->SetInput(image);
+        rescaleFilter->SetOutputMinimum(0);
+        rescaleFilter->SetOutputMaximum(255);
+        rescaleFilter->Update();
+        image = rescaleFilter->GetOutput();
 
-            resImage = blImageCreate::createNewFloatColor2DImage(nl, nc);
-            for (int m = 0 ; m < nl ; ++m){
-                for (int n = 0 ; n < nc ; ++n){
-                    index2d[0] = m; index2d[1] = n;
-                    float value = image->GetPixel(index2d);
-                    pixel2d[0] = value; pixel2d[1] = value; pixel2d[2] = value;
-                    resImage->SetPixel(index2d, pixel2d);
-                }
+        resImage = blImageCreate::createNewFloatColor2DImage(nl, nc);
+        for (int m = 0 ; m < nl ; ++m){
+            for (int n = 0 ; n < nc ; ++n){
+                index2d[0] = m; index2d[1] = n;
+                float value = image->GetPixel(index2d);
+                pixel2d[0] = value; pixel2d[1] = value; pixel2d[2] = value;
+                resImage->SetPixel(index2d, pixel2d);
             }
+        }
     }
     else if(imageType == blImage::TypeFloatColor2D || imageType == blImage::TypeIntColor2D){
-            resImage = blImageIO::loadToFloatColor2DImage(m_framesFiles.at(i));
+        resImage = blImageIO::loadToFloatColor2DImage(m_framesFiles.at(i));
     }
     return resImage;
 }

@@ -166,6 +166,7 @@ int main(int argc, char* argv[] ){
         // Save the result
         tracker->saveTracksToTxtFile(outputImageName + "tracks.txt");
         tracker->saveTracksToTxtFile2(outputImageName + "tracks2.txt");
+        tracker->saveTimeTracksRepresentationIndividual(outputImageName);
         //tracker->saveTimeTracksRepresentationFullIndividual(outputImageName);
 
         vector<blAtTrack*> tracks = tracker->output();

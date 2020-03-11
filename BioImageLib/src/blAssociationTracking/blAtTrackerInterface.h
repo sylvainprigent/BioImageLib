@@ -108,6 +108,12 @@ public:
     /// \param[in] rootFileName Name of the file where the result is save
     void saveTimeTracksRepresentationFullIndividual(string rootFileName);
 
+    /// \fn void saveTimeTracksRepresentationIndividual(string rootFileName);
+    /// \brief Save the tracking result in a list of images representing the time evolution
+    /// all the track (before curent time) is represented at each time. only the 10 previous time is ploted
+    /// \param[in] rootFileName Name of the file where the result is save
+    void saveTimeTracksRepresentationIndividual(string rootFileName);
+
     /// \fn void calculateTracks();
     /// \brief Calculate the tracks from the connection list.
     /// In this version, the output tracks can be only linear
